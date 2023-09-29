@@ -2,9 +2,77 @@
 @model uTestAndForms.Pages.TestPage
 
 @{
-    Layout = Layout;
+    Layout = null;
 }
 
-<div>
-    test
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>@ViewData["Title"] - uTestAndForms</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="~/uTestAndForms.styles.css" asp-append-version="true"/>
+</head>
+
+
+<body>
+<div class="w-100 container-md sticky-sm-top bg-black">
+    <div class="h-100">
+
+        <div class="navbar justify-content-end">
+
+
+                <div class="pos-f-t">
+                  <div class="collapse" id="navbarToggleExternalContent">
+                    <div class="bg-dark p-4">
+                      <h4 class="text-white">Collapsed content</h4>
+                      <span class="text-muted">Toggleable via the navbar brand.</span>
+                    </div>
+                  </div>
+                  <nav class="navbar navbar-dark">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
+                  </nav>
+                </div>
+            </div>
+
+
+        <div data-small="hidden" class="row">
+            <div class="col-xl text-center mynn h3">Dylan Smith</div>
+            <div class="col-xl text-center h6 text-white">Available for work</div>
+        </div>
+
+    </div>
 </div>
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>
+
+</body>
+</html>
+
+
+<script type="text/javascript">
+        $('[data-toggle=dropdown]').on('click',function (){
+            $('.dropdown-toggle').dropdown('toggle');
+        });
+
+</script>
+
+<style>
+    [data-small=hidden]{
+    display: none;
+    @@media only screen and (min-width:768px){
+        display: block;
+        }
+    }
+
+    svg{color:white;width: 30px}
+
+
+</style>
