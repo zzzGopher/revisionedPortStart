@@ -163,6 +163,19 @@
       <_ContentIncludedByDefault Remove="TestProject1\obj\TestProject1.csproj.nuget.dgspec.json" />
       <_ContentIncludedByDefault Remove="TestProject1\bin\Debug\net7.0\TestProject1.deps.json" />
       <_ContentIncludedByDefault Remove="TestProject1\bin\Debug\net7.0\TestProject1.runtimeconfig.json" />
+      <_ContentIncludedByDefault Remove="revisionedPortStart\Pages\Blogs\Addusers\Index.cshtml" />
+      <_ContentIncludedByDefault Remove="revisionedPortStart\Pages\Blogs\Index.cshtml" />
+      <_ContentIncludedByDefault Remove="revisionedPortStart\Pages\Error.cshtml" />
+      <_ContentIncludedByDefault Remove="revisionedPortStart\Pages\Index.cshtml" />
+      <_ContentIncludedByDefault Remove="revisionedPortStart\Pages\Privacy.cshtml" />
+      <_ContentIncludedByDefault Remove="revisionedPortStart\Pages\Shared\_Layout.cshtml" />
+      <_ContentIncludedByDefault Remove="revisionedPortStart\Pages\Shared\_ValidationScriptsPartial.cshtml" />
+      <_ContentIncludedByDefault Remove="revisionedPortStart\Pages\TestPage.cshtml" />
+      <_ContentIncludedByDefault Remove="revisionedPortStart\Pages\_ViewImports.cshtml" />
+      <_ContentIncludedByDefault Remove="revisionedPortStart\Pages\_ViewStart.cshtml" />
+      <_ContentIncludedByDefault Remove="revisionedPortStart\appsettings.Development.json" />
+      <_ContentIncludedByDefault Remove="revisionedPortStart\appsettings.json" />
+      <_ContentIncludedByDefault Remove="revisionedPortStart\Properties\launchSettings.json" />
     </ItemGroup>
 
     <ItemGroup>

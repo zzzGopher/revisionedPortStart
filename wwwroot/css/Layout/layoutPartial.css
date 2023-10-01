@@ -1,0 +1,11 @@
+.large-nav {
+  display: none;
+  color: white;
+}
+@media screen and (min-width: 768px) {
+  .large-nav {
+    display: grid;
+  }
+}
+
+/*# sourceMappingURL=layoutPartial.css.map */

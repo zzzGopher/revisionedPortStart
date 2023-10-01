@@ -1,0 +1,15 @@
+
+$small_screen:768px;
+$large_screen:1768px;
+$font-largest:2.5em;
+$font-small:1.25em;
+$font-medium:1.5em;
+$font-large:2em;
+
+.large-nav{
+  display: none;
+  color:white;
+  @media screen and (min-width: $small_screen){
+    display: grid;
+  }
+}
