@@ -8,8 +8,62 @@ $font-large:2em;
 
 .large-nav{
   display: none;
-  color:white;
   @media screen and (min-width: $small_screen){
     display: grid;
+    width: fit-content;
+    border-right: solid .1px rgba(255, 255, 255, 0.53);
+    position: fixed;
+    height: 100%;
+    align-items: start;
+    justify-items: center;
+    padding: .5rem;
   }
 }
+
+.large-nav-styles{
+  color: white;
+}
+
+.large-slider{
+  position: absolute;
+  width: 100vw;
+  height: 100%;
+  left:0;
+  right: 0;
+  ul{
+    padding:0;
+    margin: 0;
+    li{
+      list-style: none;
+    }
+  }
+}
+
+.large-slider-styles{
+  background-color: rgb(0, 0, 0);
+}
+
+.large-slider-grid{
+  height: 100%;
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#burger{
+  z-index: 999;
+  padding-bottom: 1.5rem;
+}
+
+[data-display="false"]{
+  translate: -100%;
+  transition: all .9s ease-in-out;
+}
+
+[data-display="true"]{
+  translate: 0%;
+  transition: all .9s ease-in-out;
+}
+
+

@@ -12,7 +12,6 @@ $font-large:2em;
   padding: 1rem 2rem 0 2rem;
   @media screen and (min-width: $small_screen) {
     display: none;
-
   }
 }
 
@@ -79,7 +78,10 @@ $font-large:2em;
   text-decoration: none;
   color: white;
   font-family: 'Megrim', cursive;
+  font-size: 20px;
 }
+
+
 
 
 
