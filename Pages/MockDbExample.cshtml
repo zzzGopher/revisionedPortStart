@@ -5,8 +5,9 @@
 
 }
 
-<div class="container-sm h-50 w-75 mt-5">
-    <form method="POST" class="w-100 d-flex text-white  p-2 h-50 bg-dark rounded border-3 border border-dark flex-column justify-content-center align-content-center" >
+<div class="container-sm h-50 w-75 mt-0">
+    <h1 class="pt-5">Mock Database</h1>
+    <form method="POST" class="w-100 d-flex text-white  p-2 h-50 bg-dark rounded border-3 border border-dark flex-column justify-content-center align-content-center">
         <div class="d-flex flex-column align-items-start ">
 
             <label class="text-nowrap fs-3" for="FirstName">First Name:</label>
@@ -24,23 +25,24 @@
 
             <label asp-for="gender">Male:</label>
 
-            <input required="true" value="male"  asp-for="gender" class="form-check " type="radio">
+            <input required="true" value="male" asp-for="gender" class="form-check " type="radio">
 
             <label asp-for="gender">Female:</label>
 
-            <input required="true" value="female"  asp-for="gender" class="form-check" type="radio">
+            <input required="true" value="female" asp-for="gender" class="form-check" type="radio">
 
         </div>
         <input class="text-uppercase form btn-secondary" type="submit"/>
     </form>
     <p>hello the time on the server: @DateTime.Now</p>
 
-    <div class="text-white fw-bolder fs-5">@foreach (var user in Model._employeeRepo.GetAllUsers())
-                                           {
-                                               <p><span class="text-dark">id:</span> @user.id <span class="text-dark">Name:</span> @user.firstName @user.lastName</p>
-                                               <span class="text-dark">Gender:</span>@user.gender
-                                           }
-        </div>
+    <div class="text-white fw-bolder fs-5">
+        @foreach (var user in Model._employeeRepo.GetAllUsers())
+        {
+            <p><span class="text-dark">id:</span> @user.id <span class="text-dark">Name:</span> @user.firstName @user.lastName</p>
+            <span class="text-dark">Gender:</span>@user.gender
+        }
+    </div>
 
     <span class="fs-4">Welcome to Page: <strong class="text-white ">@Model._id</strong></span>
     <br/>
@@ -52,9 +54,9 @@
     </form>
 
     <form asp-page-handler="DeleteAllUsers" method="POST">
-    <button type="submit" class="btn-primary btn mt-4">
-        Delete All Users
-    </button>
+        <button type="submit" class="btn-primary btn mt-4">
+            Delete All Users
+        </button>
     </form>
 
 </div>

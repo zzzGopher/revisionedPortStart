@@ -1,5 +1,23 @@
+$small_screen: 576px
+$medium_screen: 768px
+$large_screen: 992px
 
-*,*::before,*::after
+$font-small: 1.25em
+$font-medium: 1.5em
+$font-large: 2em
+$font-largest: 2.5em
+
+$hero-large: 12ch
+$hero-medium: 8ch
+$hero-small: 6ch
+
+$primaryColor: #B800E7
+$secondaryColor: #242424
+
+$section-spacing: 64px
+$letter-spacing: 10px
+
+*, *::before, *::after
   box-sizing: border-box
 
 
@@ -10,8 +28,12 @@ html
 body
   background: black
   font-family: 'Rubik', sans-serif
-  overflow: hidden
-
+  overflow-x: hidden
+  display: flex
+  height: 100%
+  flex-direction: column
+  @media screen and (min-width: $small_screen)
+    flex-direction: row
 
 
 @media (min-width: 768px)
@@ -19,12 +41,11 @@ body
     font-size: 16px
 
 
-
 .btn:focus,
 .btn:active:focus,
 .btn-link.nav-link:focus,
 .form-check-input:focus
-  box-shadow: 0 0 0 0.1rem ,white 0 0 0 0.25rem, #258cfb
+  box-shadow: 0 0 0 0.1rem, white 0 0 0 0.25rem, #258cfb
 
 
 html

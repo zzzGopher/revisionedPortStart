@@ -7,20 +7,30 @@
 
 <div class="large-nav large-nav-styles">
 
+
     <div>
         <a class="dylan-anchor" asp-page="/Index">Dylan</a>
     </div>
-    <icon onclick="Slide()" id="burger">
-        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 14 14" fill="none">
-            <path d="M0 14H14V11.6667H0V14ZM0 8.16667H14V5.83333H0V8.16667ZM0 0V2.33333H14V0H0Z" fill="white"/>
-        </svg>
-    </icon>
+        <icon onclick="Slide()" id="burger">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 14 14" fill="none">
+                <path d="M0 14H14V11.6667H0V14ZM0 8.16667H14V5.83333H0V8.16667ZM0 0V2.33333H14V0H0Z" fill="white"/>
+            </svg>
+        </icon>
+
 
     <div id="slider" data-display="false" class="large-slider large-slider-styles">
         <ul class="large-slider-grid">
-            <li>test1</li>
-            <li>test2</li>
-            <li>test3</li>
+            <li>
+                <a asp-page="/Index">Home</a>
+            </li>
+            <li>
+                <a asp-page="/MockDbExample">MockDB</a>
+            </li>
+            <li>
+                <a asp-page="/Blogs/Index">Blogs</a>
+            </li>
+            <li>three</li>
+            <li>four</li>
         </ul>
     </div>
 

@@ -10,7 +10,15 @@ html {
 body {
   background: black;
   font-family: "Rubik", sans-serif;
-  overflow: hidden;
+  overflow-x: hidden;
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+}
+@media screen and (min-width: 576px) {
+  body {
+    flex-direction: row;
+  }
 }
 
 @media (min-width: 768px) {

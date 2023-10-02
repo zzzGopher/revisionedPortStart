@@ -1,14 +1,14 @@
 @page
-@model uTestAndForms.Pages.Blogs.Index
+@model Index
 
 @{
     Layout = Layout;
 
-    bool modalState = false;
+    var modalState = false;
 }
 
 <div>
-    <h1 class="text-dark h1">
+    <h1 class="text-dark h1 pt-5">
         Blogs
     </h1>
     <div class="container align-items-center justify-content-center">
@@ -21,7 +21,6 @@
 
         @foreach (var user in Model.newUsers)
         {
-
             <table class="table table-striped table-dark">
                 <tr>
                     <th>City</th>
@@ -42,33 +41,33 @@
 
 
         <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-          <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle">Delete User</h5>
-                    <button type="button" class="myModalX" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Delete User</h5>
+                        <button type="button" class="myModalX" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
 
-                @* #IMplement Generic of T for variance in dropdown selections ie.. delete id || name || city *@
+                    @* #IMplement Generic of T for variance in dropdown selections ie.. delete id || name || city *@
 
 
-                <div class="modal-body">
-                    <form class="d-flex gap-2 align-content-center" asp-page-handler="DeleteUserWithId" method="POST">
-                        <input class="h-auto" placeholder="ID" asp-for="newUsersModel.Id" type="text">
-                        <input class="btn btn-sm btn-danger" type="submit">
-                    </form>
+                    <div class="modal-body">
+                        <form class="d-flex gap-2 align-content-center" asp-page-handler="DeleteUserWithId" method="POST">
+                            <input class="h-auto" placeholder="ID" asp-for="newUsersModel.Id" type="text">
+                            <input class="btn btn-sm btn-danger" type="submit">
+                        </form>
+                    </div>
                 </div>
             </div>
-          </div>
         </div>
     </div>
 </div>
 
 <style>
     .lob>td{
-    color:red;
+    color:purple;
     }
     .lob:hover{font-weight: bolder; transition: ease-in-out .2s;cursor: url("http://www.rw-designer.com/cursor-extern.php?id=5311"),auto}
 </style>

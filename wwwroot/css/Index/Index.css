@@ -1,0 +1,206 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 14px;
+  background-color: black;
+}
+
+body {
+  background: black;
+  font-family: "Rubik", sans-serif;
+  overflow-x: hidden;
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+}
+@media screen and (min-width: 576px) {
+  body {
+    flex-direction: row;
+  }
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+.btn:focus,
+.btn:active:focus,
+.btn-link.nav-link:focus,
+.form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem, white 0 0 0 0.25rem, #258cfb;
+}
+
+html {
+  position: relative;
+  height: 100%;
+}
+
+p {
+  font-size: 1.25em;
+}
+
+.index-section-styles {
+  color: white;
+}
+.index-section-styles h1 {
+  font-size: 6ch;
+  font-weight: 700;
+}
+@media screen and (min-width: 576px) {
+  .index-section-styles h1 {
+    font-size: 8ch;
+  }
+}
+@media screen and (min-width: 768px) {
+  .index-section-styles h1 {
+    font-size: 12ch;
+  }
+}
+
+.index-section {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  margin-top: 64px;
+}
+@media screen and (min-width: 576px) {
+  .index-section {
+    text-align: left;
+    justify-content: start;
+  }
+}
+
+.letter-i {
+  position: relative;
+  z-index: 10;
+}
+.letter-i *, .letter-i *::before, .letter-i *::after {
+  box-sizing: border-box;
+}
+.letter-i html {
+  font-size: 14px;
+  background-color: black;
+}
+.letter-i body {
+  background: black;
+  font-family: "Rubik", sans-serif;
+  overflow-x: hidden;
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+}
+@media screen and (min-width: 576px) {
+  .letter-i body {
+    flex-direction: row;
+  }
+}
+@media (min-width: 768px) {
+  .letter-i html {
+    font-size: 16px;
+  }
+}
+.letter-i .btn:focus,
+.letter-i .btn:active:focus,
+.letter-i .btn-link.nav-link:focus,
+.letter-i .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem, white 0 0 0 0.25rem, #258cfb;
+}
+.letter-i html {
+  position: relative;
+  height: 100%;
+}
+.letter-i::after {
+  content: " ";
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: #B800E7;
+  position: absolute;
+  border-radius: 100%;
+  inset: 10% 10%;
+}
+
+.ok {
+  color: #B800E7;
+  font-weight: 700;
+}
+
+.header-text {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+}
+
+.work-section {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  margin-top: 64px;
+}
+@media screen and (min-width: 576px) {
+  .work-section {
+    text-align: left;
+    justify-content: start;
+  }
+}
+
+.work-section-styles h2 {
+  text-transform: uppercase;
+  z-index: 99;
+  color: white;
+  font-size: 6ch;
+  font-weight: 700;
+}
+@media screen and (min-width: 576px) {
+  .work-section-styles h2 {
+    font-size: 8ch;
+  }
+}
+@media screen and (min-width: 768px) {
+  .work-section-styles h2 {
+    font-size: 12ch;
+  }
+}
+.work-section-styles p {
+  color: white;
+}
+.work-section-styles a {
+  color: #B800E7;
+  font-size: 1.5em;
+  font-weight: 500;
+  text-decoration-color: #B800E7;
+  cursor: pointer;
+}
+
+.work-banner {
+  position: absolute;
+  height: 20px;
+  width: 100%;
+  top: 10px;
+  background-color: #B800E7;
+}
+@media screen and (min-width: 576px) {
+  .work-banner {
+    top: 20%;
+  }
+}
+@media screen and (min-width: 768px) {
+  .work-banner {
+    top: 40%;
+  }
+}
+
+/*# sourceMappingURL=Index.css.map */

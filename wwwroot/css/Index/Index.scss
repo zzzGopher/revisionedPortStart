@@ -1,0 +1,125 @@
+@import "../site";
+
+p {
+  font-size: $font-small;
+}
+
+.index-section-styles {
+  color: white;
+
+  h1 {
+    font-size: $hero-small;
+    font-weight: 700;
+    @media screen and (min-width: $small_screen) {
+      font-size: $hero-medium;
+    }
+    @media screen and (min-width: $medium_screen) {
+      font-size: $hero-large;
+    }
+  }
+}
+
+.index-section {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  margin-top: $section-spacing;
+  @media screen and (min-width: $small_screen) {
+    text-align: left;
+    justify-content: start;
+  }
+
+}
+
+.letter-i {
+  @import "../site";
+  position: relative;
+  z-index: 10;
+
+  &::after {
+    content: " ";
+    width: .5rem;
+    height: .5rem;
+    background-color: $primaryColor;
+    position: absolute;
+    border-radius: 100%;
+    inset: 10% 10%;
+  }
+}
+
+.ok {
+  color: $primaryColor;
+  font-weight: 700;
+}
+
+.header-text {
+  display: flex;
+  flex-direction: column;
+  gap: $letter-spacing;
+}
+
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+}
+
+.work-section {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: $letter-spacing;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  margin-top: $section-spacing;
+  @media screen and (min-width: $small_screen) {
+    text-align: left;
+    justify-content: start;
+  }
+}
+
+.work-section-styles {
+
+
+  h2 {
+    text-transform: uppercase;
+    z-index: 99;
+    color: white;
+    font-size: $hero-small;
+    font-weight: 700;
+    @media screen and (min-width: $small_screen) {
+      font-size: $hero-medium;
+    }
+    @media screen and (min-width: $medium_screen) {
+      font-size: $hero-large;
+    }
+  }
+
+  p {
+    color: white
+  }
+
+  a {
+    color: $primaryColor;
+    font-size: $font-medium;
+    font-weight: 500;
+    text-decoration-color: $primaryColor;
+    cursor: pointer;
+  }
+}
+
+.work-banner {
+  position: absolute;
+  height: 20px;
+  width: 100%;
+  top: 10px;
+  background-color: $primaryColor;
+  @media screen and (min-width: $small_screen) {
+    top: 20%;
+  }
+  @media screen and (min-width: $medium_screen) {
+    top: 40%;
+  }
+}

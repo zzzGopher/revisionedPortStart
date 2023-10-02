@@ -4,9 +4,9 @@
 @media screen and (min-width: 768px) {
   .large-nav {
     display: grid;
-    width: fit-content;
+    width: min-content;
     border-right: solid 0.1px rgba(255, 255, 255, 0.53);
-    position: fixed;
+    position: relative;
     height: 100%;
     align-items: start;
     justify-items: center;
@@ -24,6 +24,7 @@
   height: 100%;
   left: 0;
   right: 0;
+  z-index: 999;
 }
 .large-slider ul {
   padding: 0;
@@ -46,8 +47,9 @@
 }
 
 #burger {
-  z-index: 999;
+  z-index: 9999;
   padding-bottom: 1.5rem;
+  cursor: pointer;
 }
 
 [data-display=false] {
@@ -58,6 +60,45 @@
 [data-display=true] {
   translate: 0%;
   transition: all 0.9s ease-in-out;
+}
+
+li {
+  color: #B800E7;
+}
+li *, li *::before, li *::after {
+  box-sizing: border-box;
+}
+li html {
+  font-size: 14px;
+  background-color: black;
+}
+li body {
+  background: black;
+  font-family: "Rubik", sans-serif;
+  overflow-x: hidden;
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+}
+@media screen and (min-width: 576px) {
+  li body {
+    flex-direction: row;
+  }
+}
+@media (min-width: 768px) {
+  li html {
+    font-size: 16px;
+  }
+}
+li .btn:focus,
+li .btn:active:focus,
+li .btn-link.nav-link:focus,
+li .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem, white 0 0 0 0.25rem, #258cfb;
+}
+li html {
+  position: relative;
+  height: 100%;
 }
 
 /*# sourceMappingURL=layoutPartial.css.map */

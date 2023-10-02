@@ -10,9 +10,9 @@ $font-large:2em;
   display: none;
   @media screen and (min-width: $small_screen){
     display: grid;
-    width: fit-content;
+    width: min-content;
     border-right: solid .1px rgba(255, 255, 255, 0.53);
-    position: fixed;
+    position: relative;
     height: 100%;
     align-items: start;
     justify-items: center;
@@ -30,6 +30,7 @@ $font-large:2em;
   height: 100%;
   left:0;
   right: 0;
+  z-index: 999;
   ul{
     padding:0;
     margin: 0;
@@ -52,8 +53,9 @@ $font-large:2em;
 }
 
 #burger{
-  z-index: 999;
+  z-index: 9999;
   padding-bottom: 1.5rem;
+  cursor: pointer;
 }
 
 [data-display="false"]{
@@ -66,4 +68,7 @@ $font-large:2em;
   transition: all .9s ease-in-out;
 }
 
-
+li{
+  @import '../site';
+  color: $primaryColor;
+}
