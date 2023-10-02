@@ -1,0 +1,90 @@
+@import "../site";
+
+#slider {
+  display: none;
+  position: fixed;
+  grid-auto-flow: column;
+  justify-content: space-between;
+  padding: $letter-spacing;
+  gap: $letter-spacing;
+  z-index: 999;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  border-right: 1px solid white;
+  @media screen and (min-width: $large_screen) {
+    display: grid;
+  }
+}
+
+.nav-menu {
+  width: fit-content;
+
+  ul {
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 0;
+  }
+
+
+}
+
+.nav-menu-styles {
+  color: white;
+
+  li {
+    list-style: none;
+    border: solid 2px red;
+  }
+}
+
+.large-nav {
+
+  ul {
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100%;
+    padding: 0;
+    gap: $letter-spacing;
+
+  }
+}
+
+
+.large-nav-styles {
+  color: white;
+
+  ul {
+    li {
+      list-style: none;
+      border: solid 2px red;
+    }
+  }
+}
+
+#burger {
+  user-select: none;
+  cursor: pointer;
+  z-index: 999;
+}
+
+[data-slide] {
+  transform-style: flat;
+}
+
+[data-slide="closed"] {
+  transform: translateX(-94.5%);
+  transition: .2s ease-in-out;
+}
+
+
+[data-slide="open"] {
+  transform: translateX(0%);
+  transition: .2s ease-in-out;
+}
+

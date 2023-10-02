@@ -1,0 +1,50 @@
+<head>
+    <link rel="stylesheet" href="~/css/Layout/layoutPartial2.css">
+</head>
+
+<header id="slider" data-slide="open">
+
+    <div class="large-nav large-nav-styles">
+        <ul>
+            <li>one</li>
+
+        </ul>
+    </div>
+    <div class="large-nav large-nav-styles">
+        <ul>
+            <li>two</li>
+
+        </ul>
+    </div>
+    <div class="large-nav large-nav-styles">
+        <ul>
+            <li>three</li>
+
+        </ul>
+    </div>
+
+    <div class="nav-menu nav-menu-styles">
+        <ul>
+            <li onclick="ActivateSlide()" id="burger">
+                Dylan
+            </li>
+        </ul>
+    </div>
+</header>
+
+<script type="text/javascript">
+
+    const Burger = document.getElementById("burger");
+    const Slider = document.getElementById("slider");
+
+    function ActivateSlide(){
+      const State = Slider.getAttribute("data-slide");
+
+      State === "closed" ? Slider.setAttribute("data-slide","open"):
+      Slider.setAttribute("data-slide","closed");
+
+      console.log(State)
+
+    }
+
+</script>
