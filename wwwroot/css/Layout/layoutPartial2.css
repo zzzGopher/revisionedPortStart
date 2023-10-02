@@ -41,58 +41,61 @@ html {
 #slider {
   display: none;
   position: fixed;
-  grid-auto-flow: column;
   justify-content: space-between;
-  padding: 10px;
-  gap: 10px;
   z-index: 999;
   height: 100%;
   width: 100%;
+  gap: 10px;
   background-color: black;
   border-right: 1px solid white;
 }
 @media screen and (min-width: 992px) {
   #slider {
-    display: grid;
+    display: flex;
+    position: relative;
   }
 }
 
-.nav-menu {
-  width: fit-content;
-}
 .nav-menu ul {
   display: grid;
   grid-auto-flow: column;
   justify-content: center;
   align-items: center;
-  height: 100%;
   padding: 0;
+  width: 100px;
 }
 
 .nav-menu-styles {
   color: white;
+  display: flex;
 }
 .nav-menu-styles li {
   list-style: none;
-  border: solid 2px red;
 }
 
-.large-nav ul {
-  display: grid;
-  grid-auto-flow: column;
-  justify-content: space-evenly;
+.large-nav {
+  text-align: center;
+  display: flex;
+  justify-content: center;
   align-items: center;
-  height: 100%;
+  flex-grow: 1;
   padding: 0;
   gap: 10px;
+}
+.large-nav li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
 }
 
 .large-nav-styles {
   color: white;
 }
-.large-nav-styles ul li {
+.large-nav-styles li {
   list-style: none;
-  border: solid 2px red;
+  border-right: 1px solid white;
 }
 
 #burger {
@@ -106,7 +109,7 @@ html {
 }
 
 [data-slide=closed] {
-  transform: translateX(-94.5%);
+  transform: translateX(-90.5%);
   transition: 0.2s ease-in-out;
 }
 
