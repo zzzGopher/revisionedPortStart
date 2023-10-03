@@ -6,15 +6,18 @@ p {
 
 .index-section-styles {
   color: white;
+  text-align: left;
 
   h1 {
     font-size: $hero-small;
     font-weight: 700;
+
     @media screen and (min-width: $small_screen) {
       font-size: $hero-medium;
     }
     @media screen and (min-width: $medium_screen) {
       font-size: $hero-large;
+      white-space: nowrap;
     }
   }
 }
@@ -25,7 +28,7 @@ p {
   align-items: center;
   text-align: center;
   margin-top: $section-spacing;
-  @media screen and (min-width: $small_screen) {
+  @media screen and (min-width: $large_screen) {
     text-align: left;
     justify-content: start;
   }
@@ -39,12 +42,23 @@ p {
 
   &::after {
     content: " ";
-    width: .5rem;
-    height: .5rem;
+    width: 1rem;
+    height: 1rem;
     background-color: $primaryColor;
     position: absolute;
     border-radius: 100%;
-    inset: 10% 10%;
+    inset: 10% 2%;
+    @media screen and (min-width: $small_screen) {
+      width: 1.2rem;
+      height: 1.2rem;
+      inset: 10% 8%;
+    }
+    @media screen and (min-width: $medium_screen) {
+      width: 2rem;
+      height: 2rem;
+      inset: 9% 3%;
+    }
+
   }
 }
 
@@ -74,9 +88,9 @@ p {
   align-items: center;
   text-align: center;
   margin-top: $section-spacing;
-  @media screen and (min-width: $small_screen) {
+  @media screen and (min-width: $large_screen) {
     text-align: left;
-    justify-content: start;
+    align-items: start;
   }
 }
 
@@ -85,7 +99,7 @@ p {
 
   h2 {
     text-transform: uppercase;
-    z-index: 99;
+    z-index: 9999;
     color: white;
     font-size: $hero-small;
     font-weight: 700;
@@ -98,7 +112,7 @@ p {
   }
 
   p {
-    color: white
+    color: white;
   }
 
   a {
@@ -123,3 +137,50 @@ p {
     top: 40%;
   }
 }
+
+.auto-banner {
+  margin-top: calc(2 * $section-spacing);
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+
+  ul {
+    display: flex;
+    align-items: center;
+    animation: banner 15s linear infinite;
+
+    &:hover {
+      animation-play-state: paused;
+    }
+  }
+}
+
+.auto-banner > ul {
+  margin: 0;
+  list-style: none;
+  justify-content: center;
+  align-content: center;
+  height: 53px;
+  gap: 4rem;
+  white-space: nowrap;
+}
+
+.auto-banner-styles {
+  color: white;
+  background-color: $secondaryColor;
+  font-size: $font-medium;
+  padding: 1rem;
+}
+
+@keyframes banner {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+

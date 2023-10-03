@@ -15,7 +15,7 @@ body {
   height: 100%;
   flex-direction: column;
 }
-@media screen and (min-width: 576px) {
+@media screen and (min-width: 992px) {
   body {
     flex-direction: row;
   }
@@ -44,6 +44,7 @@ p {
 
 .index-section-styles {
   color: white;
+  text-align: left;
 }
 .index-section-styles h1 {
   font-size: 6ch;
@@ -57,6 +58,7 @@ p {
 @media screen and (min-width: 768px) {
   .index-section-styles h1 {
     font-size: 12ch;
+    white-space: nowrap;
   }
 }
 
@@ -67,7 +69,7 @@ p {
   text-align: center;
   margin-top: 64px;
 }
-@media screen and (min-width: 576px) {
+@media screen and (min-width: 992px) {
   .index-section {
     text-align: left;
     justify-content: start;
@@ -93,7 +95,7 @@ p {
   height: 100%;
   flex-direction: column;
 }
-@media screen and (min-width: 576px) {
+@media screen and (min-width: 992px) {
   .letter-i body {
     flex-direction: row;
   }
@@ -115,12 +117,26 @@ p {
 }
 .letter-i::after {
   content: " ";
-  width: 0.5rem;
-  height: 0.5rem;
+  width: 1rem;
+  height: 1rem;
   background-color: #B800E7;
   position: absolute;
   border-radius: 100%;
-  inset: 10% 10%;
+  inset: 10% 2%;
+}
+@media screen and (min-width: 576px) {
+  .letter-i::after {
+    width: 1.2rem;
+    height: 1.2rem;
+    inset: 10% 8%;
+  }
+}
+@media screen and (min-width: 768px) {
+  .letter-i::after {
+    width: 2rem;
+    height: 2rem;
+    inset: 9% 3%;
+  }
 }
 
 .ok {
@@ -150,16 +166,16 @@ p {
   text-align: center;
   margin-top: 64px;
 }
-@media screen and (min-width: 576px) {
+@media screen and (min-width: 992px) {
   .work-section {
     text-align: left;
-    justify-content: start;
+    align-items: start;
   }
 }
 
 .work-section-styles h2 {
   text-transform: uppercase;
-  z-index: 99;
+  z-index: 9999;
   color: white;
   font-size: 6ch;
   font-weight: 700;
@@ -200,6 +216,49 @@ p {
 @media screen and (min-width: 768px) {
   .work-banner {
     top: 40%;
+  }
+}
+
+.auto-banner {
+  margin-top: 128px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.auto-banner ul {
+  display: flex;
+  align-items: center;
+  animation: banner 15s linear infinite;
+}
+.auto-banner ul:hover {
+  animation-play-state: paused;
+}
+
+.auto-banner > ul {
+  margin: 0;
+  list-style: none;
+  justify-content: center;
+  align-content: center;
+  height: 53px;
+  gap: 4rem;
+  white-space: nowrap;
+}
+
+.auto-banner-styles {
+  color: white;
+  background-color: #242424;
+  font-size: 1.5em;
+  padding: 1rem;
+}
+
+@keyframes banner {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-100%, 0, 0);
   }
 }
 

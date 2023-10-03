@@ -1,53 +1,85 @@
-
-
-
 <head>
-    <link rel="stylesheet" href="./css/Layout/layoutPartial.css">
+    <link rel="stylesheet" href="~/css/Layout/layoutPartial.css">
+    <link rel="stylesheet" href="~/css/Layout/nav-button.css">
 </head>
 
-<div class="large-nav large-nav-styles">
+
+<header id="slider" data-slide="closed">
 
 
-    <div>
-        <a class="dylan-anchor" asp-page="/Index">Dylan</a>
-    </div>
-        <icon onclick="Slide()" id="burger">
-            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 14 14" fill="none">
-                <path d="M0 14H14V11.6667H0V14ZM0 8.16667H14V5.83333H0V8.16667ZM0 0V2.33333H14V0H0Z" fill="white"/>
-            </svg>
-        </icon>
+    <ul class="large-nav large-nav-styles">
 
+        <li>
+            <a asp-page="/Index">Home</a>
+        </li>
+        <li>
+            <a asp-page="/MockDbExample">MockDB</a>
+        </li>
+        <li>
+            <a asp-page="/Blogs/Index">Blogs</a>
+        </li>
 
-    <div id="slider" data-display="false" class="large-slider large-slider-styles">
-        <ul class="large-slider-grid">
+    </ul>
+
+    <div class="nav-menu nav-menu-styles">
+        <ul>
+
             <li>
-                <a asp-page="/Index">Home</a>
+                <a class="dylan-anchor" asp-page="/Index">Dylan</a>
             </li>
-            <li>
-                <a asp-page="/MockDbExample">MockDB</a>
+
+
+            <li onclick="ActivateSlide()" id="burger">
+
+                <div id="icon" class="Icon open">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+
             </li>
-            <li>
-                <a asp-page="/Blogs/Index">Blogs</a>
-            </li>
-            <li>three</li>
-            <li>four</li>
+
+
+            <span id="copy">
+                &copy
+            </span>
+
+
         </ul>
     </div>
 
-</div>
+
+</header>
 
 
 <script type="text/javascript">
 
-   const Burger = document.getElementById("burger");
-   const Slider = document.getElementById("slider");
+    const Slider = document.getElementById("slider");
 
-   function Slide(){
-      const Data = Slider.getAttribute("data-display");
 
-      Data === "false" ? Slider.setAttribute("data-display","true") : Slider.setAttribute("data-display","false");
-   }
+    function ActivateSlide(){
+      const State = Slider.getAttribute("data-slide");
+
+
+
+      State === "closed" ? Slider.setAttribute("data-slide","open"):
+      Slider.setAttribute("data-slide","closed");
+
+      console.log(State)
+
+    }
+
+    const icon = document.getElementById("icon");
+
+    icon.onclick = function() {
+      if (this.className === "Icon open") {
+        this.className = "Icon";
+      } else {
+        this.className = "Icon open";
+      }
+    };
+
+
 
 
 </script>
-

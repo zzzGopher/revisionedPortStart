@@ -15,7 +15,7 @@ body {
   height: 100%;
   flex-direction: column;
 }
-@media screen and (min-width: 576px) {
+@media screen and (min-width: 992px) {
   body {
     flex-direction: row;
   }
@@ -41,7 +41,7 @@ html {
 .navbar {
   padding: 1rem 2rem 0 2rem;
 }
-@media screen and (min-width: 576px) {
+@media screen and (min-width: 992px) {
   .navbar {
     display: none;
   }

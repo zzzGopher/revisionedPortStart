@@ -1,0 +1,61 @@
+
+.Icon {
+  width: 47px;
+  height: 50px;
+  top: 7px;
+  position: relative;
+  transform: rotate(180deg);
+  transition: .5s ease-in-out;
+  cursor: pointer;
+}
+
+.Icon span {
+  display: block;
+  position: absolute;
+  top: 23px;
+  height: 3px;
+  width: 100%;
+  background: #fff;
+  border-radius: 4px;
+  transform: rotate(0deg);
+  transition: .2s ease-in-out;
+}
+
+.Icon span:nth-child(1),
+.Icon span:nth-child(3) {
+  width: 50%;
+  transform: rotate(45deg);
+}
+
+.Icon span:nth-child(1) {
+  left: 3px;
+  top: 15px;
+}
+
+.Icon span:nth-child(2) {
+  transform: rotate(-45deg);
+}
+
+.Icon span:nth-child(3) {
+  left: 20px;
+  top: 31px;
+}
+
+.Icon.open span:nth-child(1),
+.Icon.open span:nth-child(3) {
+  left: -3px;
+}
+
+.Icon.open span:nth-child(1) {
+  top: 15px;
+  transform: rotate(135deg);
+}
+
+.Icon.open span:nth-child(2) {
+  transform: rotate(0deg);
+}
+
+.Icon.open span:nth-child(3) {
+  top: 31px;
+  transform: rotate(45deg);
+}

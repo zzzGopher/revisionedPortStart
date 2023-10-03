@@ -1,19 +1,18 @@
-
 @import "../site";
 
 
-.navbar{
+.navbar {
   padding: 1rem 2rem 0 2rem;
-  @media screen and (min-width: $small_screen) {
+  @media screen and (min-width: $large_screen) {
     display: none;
   }
 }
 
-.nav-items-styles{
+.nav-items-styles {
   color: white;
 }
 
-.nav-items{
+.nav-items {
   display: flex;
   width: 100%;
   align-items: center;
@@ -21,37 +20,38 @@
   position: relative;
 }
 
-.navbar-menu{
+.navbar-menu {
   display: flex;
   justify-content: center;
   text-align: center;
-  top:2rem;
+  top: 2rem;
   right: 0;
   position: absolute;
-  li{
+
+  li {
     list-style: none;
     width: 100px;
   }
 }
 
-.navbar-menu-style{
+.navbar-menu-style {
   text-transform: uppercase;
   text-align: right;
-  ul{
+
+  ul {
     padding: 0;
     line-height: 2.5rem;
   }
-  li{
-    color:white;
+
+  li {
+    color: white;
   }
 }
 
 
-
-
-[data-nav-state="false"]{
-  ul{
-    li{
+[data-nav-state="false"] {
+  ul {
+    li {
       opacity: 0;
       max-height: 0;
       transition: all .2s ease-in-out;
@@ -59,16 +59,16 @@
   }
 }
 
-[data-nav-state="true"]{
-  ul{
-    li{
+[data-nav-state="true"] {
+  ul {
+    li {
       max-height: fit-content;
       transition: all .2s ease-out;
     }
   }
 }
 
-.dylan-anchor, .dylan-anchor:visited,.dylan-anchor:active,.dylan-anchor:focus{
+.dylan-anchor, .dylan-anchor:visited, .dylan-anchor:active, .dylan-anchor:focus {
   text-decoration: none;
   color: white;
   font-family: 'Megrim', cursive;

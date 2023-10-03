@@ -1,78 +1,13 @@
-.large-nav {
-  display: none;
-}
-@media screen and (min-width: 768px) {
-  .large-nav {
-    display: grid;
-    width: min-content;
-    border-right: solid 0.1px rgba(255, 255, 255, 0.53);
-    position: relative;
-    height: 100%;
-    align-items: start;
-    justify-items: center;
-    padding: 0.5rem;
-  }
-}
-
-.large-nav-styles {
-  color: white;
-}
-
-.large-slider {
-  position: absolute;
-  width: 100vw;
-  height: 100%;
-  left: 0;
-  right: 0;
-  z-index: 999;
-}
-.large-slider ul {
-  padding: 0;
-  margin: 0;
-}
-.large-slider ul li {
-  list-style: none;
-}
-
-.large-slider-styles {
-  background-color: rgb(0, 0, 0);
-}
-
-.large-slider-grid {
-  height: 100%;
-  display: grid;
-  grid-auto-flow: column;
-  justify-content: space-around;
-  align-items: center;
-}
-
-#burger {
-  z-index: 9999;
-  padding-bottom: 1.5rem;
-  cursor: pointer;
-}
-
-[data-display=false] {
-  translate: -100%;
-  transition: all 0.9s ease-in-out;
-}
-
-[data-display=true] {
-  translate: 0%;
-  transition: all 0.9s ease-in-out;
-}
-
-li {
-  color: #B800E7;
-}
-li *, li *::before, li *::after {
+*, *::before, *::after {
   box-sizing: border-box;
 }
-li html {
+
+html {
   font-size: 14px;
   background-color: black;
 }
-li body {
+
+body {
   background: black;
   font-family: "Rubik", sans-serif;
   overflow-x: hidden;
@@ -80,25 +15,154 @@ li body {
   height: 100%;
   flex-direction: column;
 }
-@media screen and (min-width: 576px) {
-  li body {
+@media screen and (min-width: 992px) {
+  body {
     flex-direction: row;
   }
 }
+
 @media (min-width: 768px) {
-  li html {
+  html {
     font-size: 16px;
   }
 }
-li .btn:focus,
-li .btn:active:focus,
-li .btn-link.nav-link:focus,
-li .form-check-input:focus {
+.btn:focus,
+.btn:active:focus,
+.btn-link.nav-link:focus,
+.form-check-input:focus {
   box-shadow: 0 0 0 0.1rem, white 0 0 0 0.25rem, #258cfb;
 }
-li html {
+
+html {
   position: relative;
   height: 100%;
+}
+
+#slider {
+  display: none;
+  position: fixed;
+  justify-content: space-between;
+  z-index: 99999;
+  height: 100%;
+  width: 100%;
+  gap: 10px;
+  background-color: black;
+}
+@media screen and (min-width: 992px) {
+  #slider {
+    display: flex;
+  }
+}
+
+.nav-menu {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.nav-menu ul {
+  padding: 2rem 0 2rem 0;
+  margin: 0;
+  width: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+
+.nav-menu-styles {
+  color: white;
+  display: flex;
+  border-right: 1px solid white;
+}
+.nav-menu-styles li {
+  list-style: none;
+}
+
+.large-nav {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  padding: 0;
+  margin: 0;
+  gap: 10px;
+}
+.large-nav li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.large-nav-styles {
+  color: white;
+}
+.large-nav-styles li {
+  list-style: none;
+  border-right: 1px solid white;
+}
+.large-nav-styles a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 2.5em;
+  text-transform: uppercase;
+  color: #242424;
+  height: 100%;
+  width: 100%;
+}
+.large-nav-styles a:hover {
+  transition: all 0.1s ease-in-out;
+  color: white;
+}
+
+#burger {
+  user-select: none;
+  cursor: pointer;
+  z-index: 999;
+  color: white;
+  height: min-content;
+}
+
+[data-slide] {
+  transform-style: flat;
+}
+
+[data-slide=closed] {
+  transform: translateX(-100%);
+  transform: translateX(-100%);
+  transition: 0.4s ease-in-out;
+  z-index: 9999;
+}
+[data-slide=closed] .nav-menu {
+  translate: 100px;
+  background-color: black;
+}
+
+[data-slide=closed] #copy {
+  color: #242424;
+}
+
+[data-slide=open] {
+  transform: translateX(0%);
+  transition: 0.4s ease-in-out;
+}
+[data-slide=open] #copy {
+  transition: all 1s ease-in-out;
+  color: #B800E7;
+}
+[data-slide=open] .dylan-anchor {
+  transition: all 1s ease-in-out;
+  color: #B800E7;
+}
+
+#copy {
+  font-size: 2em;
+  user-select: none;
 }
 
 /*# sourceMappingURL=layoutPartial.css.map */
