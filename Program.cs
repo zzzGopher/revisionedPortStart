@@ -1,23 +1,19 @@
-
 using uTestAndForms.Data;
 using uTestAndForms.Models;
 
-
 var builder = WebApplication.CreateBuilder(args);
-
 
 
 // Add services to the container.
 builder.Services.AddRazorPages();
 
-builder.Services.AddSingleton<IEmployeeRespository,MockUserRepository>();
+builder.Services.AddSingleton<IEmployeeRespository, MockUserRepository>();
 
-builder.Services.AddSingleton<IDataAccess, DataAccess>();
+builder.Services.AddTransient<IDataAccess, DataAccess>();
 
-builder.Services.AddSingleton<IgetConnection, getConnection>();
+builder.Services.AddTransient<IgetConnection, getConnection>();
 
 builder.Services.AddSingleton<IDeleteUser, DeleteUser>();
-
 
 
 builder.Services.Configure<ConnectionStrings>(builder.Configuration.GetSection(nameof(ConnectionStrings)));
@@ -41,7 +37,6 @@ app.UseRouting();
 app.UseAuthorization();
 
 app.MapRazorPages();
-
 
 
 app.Run();

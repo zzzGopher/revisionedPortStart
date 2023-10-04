@@ -1,19 +1,16 @@
 using System.Data;
 using System.Data.Common;
 using Microsoft.Data.SqlClient;
-using Microsoft.Extensions.Options;
 using uTestAndForms.Models;
 
 namespace uTestAndForms.Data;
 
 public class DataAccess : IDataAccess
 {
-
+    private readonly IgetConnection _getConnection;
 
 
     private List<newUsers> _newUsersList;
-
-    private readonly IgetConnection _getConnection;
 
     public DataAccess(IgetConnection getConnection)
     {
@@ -21,12 +18,12 @@ public class DataAccess : IDataAccess
     }
 
 
-    public async Task<List<newUsers>> ReadFromDB()
+    public async Task<IEnumerable<newUsers>> ReadFromDB()
     {
         await using var connection = await _getConnection.getConnections();
         try
         {
-            await using DbCommand cmd = new SqlCommand("SELECT * FROM Users",connection);
+            await using DbCommand cmd = new SqlCommand("SELECT * FROM Users", connection);
 
             cmd.CommandType = CommandType.Text;
 
@@ -39,10 +36,7 @@ public class DataAccess : IDataAccess
 
                 while (rdr.Read())
                 {
-
-
-
-                    newUsers.Add(new newUsers()
+                    newUsers.Add(new newUsers
                     {
                         Name = Convert.ToString(rdr["Name"]),
                         City = Convert.ToString(rdr["City"]),
@@ -64,20 +58,18 @@ public class DataAccess : IDataAccess
         return _newUsersList;
     }
 
-    public async Task AddUser(string name,string city,string state)
+    public async Task AddUser(string name, string city, string state)
     {
-
         try
         {
             await using var connection = await _getConnection.getConnections();
 
-            await using SqlCommand cmd = new SqlCommand("INSERT INTO Users (name, city, state) VALUES(@Name,@City,@State)",connection);
+            await using var cmd = new SqlCommand("INSERT INTO Users (name, city, state) VALUES(@Name,@City,@State)",
+                connection);
 
             cmd.Parameters.Add("@Name", SqlDbType.VarChar, 80).Value = name;
             cmd.Parameters.Add("@City", SqlDbType.VarChar, 80).Value = city;
             cmd.Parameters.Add("@State", SqlDbType.VarChar, 80).Value = state;
-
-
 
 
             connection.Open();
@@ -85,13 +77,11 @@ public class DataAccess : IDataAccess
             await cmd.ExecuteNonQueryAsync();
 
             connection.Close();
-
         }
         catch (Exception e)
         {
-            Console.Write(e.Source,e.Message);
+            Console.Write(e.Source, e.Message);
             throw e;
         }
     }
-
 }

@@ -67,7 +67,7 @@ p {
   justify-content: space-around;
   align-items: center;
   text-align: center;
-  margin-top: 64px;
+  margin-top: 96px;
 }
 @media screen and (min-width: 992px) {
   .index-section {
@@ -150,10 +150,20 @@ p {
   gap: 10px;
 }
 
+main {
+  height: 100%;
+}
+
+.index-container {
+  height: 100%;
+}
+
 .content-wrapper {
   display: flex;
+  height: 100%;
   flex-direction: column;
-  gap: 64px;
+  gap: 77px;
+  justify-content: start;
 }
 
 .work-section {
@@ -164,7 +174,6 @@ p {
   justify-content: space-around;
   align-items: center;
   text-align: center;
-  margin-top: 64px;
 }
 @media screen and (min-width: 992px) {
   .work-section {
@@ -220,27 +229,19 @@ p {
 }
 
 .auto-banner {
-  margin-top: 128px;
   overflow: hidden;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  margin-top: 28px;
 }
 .auto-banner ul {
   display: flex;
   align-items: center;
   animation: banner 15s linear infinite;
-}
-.auto-banner ul:hover {
-  animation-play-state: paused;
-}
-
-.auto-banner > ul {
-  margin: 0;
-  list-style: none;
   justify-content: center;
-  align-content: center;
+  margin: 0;
   height: 53px;
   gap: 4rem;
   white-space: nowrap;
@@ -251,6 +252,9 @@ p {
   background-color: #242424;
   font-size: 1.5em;
   padding: 1rem;
+}
+.auto-banner-styles ul {
+  list-style: none;
 }
 
 @keyframes banner {

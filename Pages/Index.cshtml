@@ -9,7 +9,7 @@
 <div class="content-wrapper">
 
     <section class="index-section index-section-styles">
-        <div class="mt-5 header-text">
+        <div class="header-text">
 
             <h1>
                 Dylan Sm<span class="letter-i">i</span>th
@@ -34,8 +34,8 @@
         <div class="work-banner"/>
     </section>
 
-    <section id="animated" class="auto-banner auto-banner-styles">
-        <ul >
+    <section class="auto-banner auto-banner-styles">
+        <ul class="animated">
             <li>TailwindCSS</li>
             <li>React</li>
             <li>C#</li>
@@ -45,7 +45,7 @@
             <li>SCSS</li>
             <li>SQL Server</li>
         </ul>
-        <ul aria-hidden="True">
+        <ul class="animated" aria-hidden="true">
             <li>TailwindCSS</li>
             <li>React</li>
             <li>C#</li>
@@ -61,7 +61,17 @@
 
 
 <script type="text/javascript">
-    const Animated = document.getElementById("animated");
+    const Animated = document.querySelector('.animated')
+    const UL = document.querySelector('h2');
+
+       Animated.onanimationiteration = ()=>{
+
+        Animated.insertAdjacentHTML("afterend",Animated.outerHTML);
+        Animated.nextElementSibling.setAttribute('aria-hidden','true');
+
+        console.log("ended")
+
+       };
 
 
 </script>
