@@ -11,15 +11,10 @@
 <div>
 
     <div class="container pb-5 align-items-center justify-content-center">
-        <h1 class="text-dark h1 pt-5">
-            SQL Tables
+        <h1 class="text-white h1 pt-5">
+            SQL Tables Example
         </h1>
 
-        <button class="btn btn-dark mb-2">Update</button>
-
-        <a href="Blogs/AddUsers" class="btn btn-dark mb-2">Add Users</a>
-
-        <button data-toggle="modal" onclick="showModal()" href="Blogs/AddUsers" class="btn btn-dark mb-2">Delete Users</button>
 
         <form METHOD="get" class="form d-flex gap-4 py-2 mb-2">
             <input class="fs-4 input-group-text" asp-for="nameParam" type="search"/>
@@ -34,13 +29,13 @@
                         User Info
                     </th>
                     <td>
-                        <button>Add</button>
+                        <a href="Blogs/Addusers" type="button">Add</a>
                     </td>
                     <td>
                         <button>Update</button>
                     </td>
                     <td>
-                        <button>Search</button>
+                        <input class="main-search" type="search"/>
                     </td>
                 </tr>
                 <tr class="sql-columns">
@@ -48,7 +43,7 @@
                     <th>ID</th>
                     <th>State</th>
                     <th>City</th>
-                    <th class="holder">holder</th>
+                    <th aria-hidden="true" class="holder">holder</th>
                 </tr>
                 @foreach (var user in Model.newUsers)
                 {
@@ -60,7 +55,7 @@
                         <td class="">@user.Id</td>
                         <td class="">@user.State</td>
                         <td>
-                            <button>Delete</button>
+                            <button data-toggle="modal" onclick="showModal()">Delete</button>
                         </td>
                     </tr>
                 }

@@ -62,12 +62,24 @@ html {
   align-items: center;
   text-transform: uppercase;
 }
-.main-row button {
+.main-row button, .main-row a {
+  color: white;
   text-transform: uppercase;
   text-decoration: none;
   border: none;
   background-color: #B800E7;
+  padding: 0.5rem 1rem 0.5rem 1rem;
   border-radius: 30px;
+}
+.main-row button:hover, .main-row a:hover {
+  opacity: 50%;
+  transition: opacity 0.15s ease-in-out;
+}
+
+.main-search {
+  border-radius: 30px;
+  text-decoration: none;
+  border: solid 2px white;
 }
 
 .sql-columns {
@@ -89,6 +101,7 @@ html {
 .sql-data {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
+  align-items: center;
   padding: 1rem;
 }
 .sql-data td {
@@ -96,12 +109,16 @@ html {
 }
 .sql-data button {
   background-color: black;
-  border: 1px solid #B800E7;
+  border: 2px solid #B800E7;
   color: white;
   border-radius: 30px;
   text-transform: uppercase;
   padding: 0.5rem 2rem 0.5rem 2rem;
   font-weight: bold;
+}
+.sql-data button:hover {
+  background-color: #B800E7;
+  transition: background-color 0.15s ease-in-out;
 }
 
 /*# sourceMappingURL=SqlStyles.css.map */
