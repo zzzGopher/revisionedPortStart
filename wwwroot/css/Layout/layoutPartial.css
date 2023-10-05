@@ -45,7 +45,7 @@ html {
   z-index: 99999;
   height: 100%;
   width: 100%;
-  gap: 10px;
+  gap: 1rem;
   background-color: black;
 }
 @media screen and (min-width: 992px) {
@@ -87,7 +87,7 @@ html {
   flex-grow: 1;
   padding: 0;
   margin: 0;
-  gap: 10px;
+  gap: 1rem;
 }
 .large-nav li {
   display: flex;

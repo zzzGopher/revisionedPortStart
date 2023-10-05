@@ -67,7 +67,6 @@ p {
   justify-content: space-around;
   align-items: center;
   text-align: center;
-  margin-top: 96px;
 }
 @media screen and (min-width: 992px) {
   .index-section {
@@ -147,7 +146,7 @@ p {
 .header-text {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 1rem;
 }
 
 main {
@@ -162,7 +161,9 @@ main {
   display: flex;
   height: 100%;
   flex-direction: column;
-  gap: 77px;
+  gap: 4rem;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
   justify-content: start;
 }
 
@@ -170,7 +171,7 @@ main {
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 1rem;
   justify-content: space-around;
   align-items: center;
   text-align: center;
@@ -214,17 +215,29 @@ main {
   position: absolute;
   height: 20px;
   width: 100%;
-  top: 10px;
+  top: 29.4%;
+  left: 0;
   background-color: #B800E7;
+}
+@media screen and (min-width: 498px) {
+  .work-banner {
+    top: 27.4%;
+  }
 }
 @media screen and (min-width: 576px) {
   .work-banner {
-    top: 20%;
+    top: 30.4%;
   }
 }
 @media screen and (min-width: 768px) {
   .work-banner {
-    top: 40%;
+    top: 41.5%;
+  }
+}
+@media screen and (min-width: 992px) {
+  .work-banner {
+    top: 37.8%;
+    width: 80%;
   }
 }
 
@@ -234,7 +247,7 @@ main {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin-top: 28px;
+  margin-top: 2rem;
 }
 .auto-banner ul {
   display: flex;
@@ -264,6 +277,49 @@ main {
   100% {
     transform: translate3d(-100%, 0, 0);
   }
+}
+.about-section {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+}
+@media screen and (min-width: 992px) {
+  .about-section {
+    text-align: left;
+    align-items: start;
+  }
+}
+
+.about-section-styles h3 {
+  text-transform: uppercase;
+  z-index: 9999;
+  color: white;
+  font-size: 6ch;
+  font-weight: 700;
+}
+@media screen and (min-width: 576px) {
+  .about-section-styles h3 {
+    font-size: 8ch;
+  }
+}
+@media screen and (min-width: 768px) {
+  .about-section-styles h3 {
+    font-size: 12ch;
+  }
+}
+.about-section-styles p {
+  color: white;
+}
+.about-section-styles a {
+  color: #B800E7;
+  font-size: 1.5em;
+  font-weight: 500;
+  text-decoration-color: #B800E7;
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=Index.css.map */

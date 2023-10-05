@@ -12,7 +12,7 @@
 
     <div class="container pb-5 align-items-center justify-content-center">
         <h1 class="text-dark h1 pt-5">
-            Blogs
+            SQL Tables
         </h1>
 
         <button class="btn btn-dark mb-2">Update</button>
@@ -27,28 +27,45 @@
             <a asp-page-handler="Refresh" value="Back" class="btn fs-5 d-flex align-items-center justify-content-center flex-grow-1 btn-sm btn-outline-danger">Refresh</a>
         </form>
 
-
-        @foreach (var user in Model.newUsers)
-        {
-            <table class="table table-striped table-dark">
-                <tr>
-                    <th>
-                        City
+        <div class="table-wrapper">
+            <table class="sql-table">
+                <tr class="main-row">
+                    <th class="main-heading">
+                        User Info
                     </th>
-                    <th>Name</th>
+                    <td>
+                        <button>Add</button>
+                    </td>
+                    <td>
+                        <button>Update</button>
+                    </td>
+                    <td>
+                        <button>Search</button>
+                    </td>
+                </tr>
+                <tr class="sql-columns">
+                    <th>User</th>
                     <th>ID</th>
                     <th>State</th>
+                    <th>City</th>
+                    <th class="holder">holder</th>
                 </tr>
-                <tr class="lob">
-                    <td class="w-25">
-                        @user.City
-                    </td>
-                    <td class="w-25">@user.Name</td>
-                    <td class="w-25">@user.Id</td>
-                    <td class="w-25">@user.State</td>
-                </tr>
+                @foreach (var user in Model.newUsers)
+                {
+                    <tr class="sql-data">
+                        <td class="">
+                            @user.City
+                        </td>
+                        <td class="">@user.Name</td>
+                        <td class="">@user.Id</td>
+                        <td class="">@user.State</td>
+                        <td>
+                            <button>Delete</button>
+                        </td>
+                    </tr>
+                }
             </table>
-        }
+        </div>
 
 
         <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">

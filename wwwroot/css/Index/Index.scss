@@ -27,7 +27,6 @@ p {
   justify-content: space-around;
   align-items: center;
   text-align: center;
-  margin-top: $section-spacing;
   @media screen and (min-width: $large_screen) {
     text-align: left;
     justify-content: start;
@@ -85,7 +84,9 @@ main {
   display: flex;
   height: 100%;
   flex-direction: column;
-  gap: 77px;
+  gap: 4rem;
+  margin-top: $section-spacing;
+  margin-bottom: $section-spacing;
   justify-content: start;
 }
 
@@ -137,13 +138,21 @@ main {
   position: absolute;
   height: 20px;
   width: 100%;
-  top: 10px;
+  top: 29.4%;
+  left: 0;
   background-color: $primaryColor;
+  @media screen and (min-width: $smaller_screen) {
+    top: 27.4%;
+  }
   @media screen and (min-width: $small_screen) {
-    top: 20%;
+    top: 30.4%;
   }
   @media screen and (min-width: $medium_screen) {
-    top: 40%;
+    top: 41.5%;
+  }
+  @media screen and (min-width: $large_screen) {
+    top: 37.8%;
+    width: 80%;
   }
 }
 
@@ -153,7 +162,7 @@ main {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin-top: 28px;
+  margin-top: 2rem;
 
 
   ul {
@@ -186,6 +195,50 @@ main {
   }
   100% {
     transform: translate3d(-100%, 0, 0);
+  }
+}
+
+.about-section {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: $letter-spacing;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  @media screen and (min-width: $large_screen) {
+    text-align: left;
+    align-items: start;
+  }
+}
+
+.about-section-styles {
+
+
+  h3 {
+    text-transform: uppercase;
+    z-index: 9999;
+    color: white;
+    font-size: $hero-small;
+    font-weight: 700;
+    @media screen and (min-width: $small_screen) {
+      font-size: $hero-medium;
+    }
+    @media screen and (min-width: $medium_screen) {
+      font-size: $hero-large;
+    }
+  }
+
+  p {
+    color: white;
+  }
+
+  a {
+    color: $primaryColor;
+    font-size: $font-medium;
+    font-weight: 500;
+    text-decoration-color: $primaryColor;
+    cursor: pointer;
   }
 }
 
