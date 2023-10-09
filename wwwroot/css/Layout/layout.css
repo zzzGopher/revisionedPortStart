@@ -3,7 +3,7 @@
 }
 
 html {
-  font-size: 14px;
+  font-size: 16px;
   background-color: black;
 }
 
@@ -38,8 +38,24 @@ html {
   height: 100%;
 }
 
+.section-wrapper {
+  width: 80%;
+  margin-inline: auto;
+}
+@media (min-width: 992px) {
+  .section-wrapper {
+    translate: 50px;
+  }
+}
+
+.modal-backdrop {
+  width: auto;
+}
+
 .navbar {
   padding: 1rem 2rem 0 2rem;
+  z-index: 999;
+  background-color: black;
 }
 @media screen and (min-width: 992px) {
   .navbar {

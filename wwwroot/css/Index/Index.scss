@@ -84,7 +84,7 @@ main {
   display: flex;
   height: 100%;
   flex-direction: column;
-  gap: 4rem;
+  gap: 5rem;
   margin-top: $section-spacing;
   margin-bottom: $section-spacing;
   justify-content: start;
@@ -101,6 +101,43 @@ main {
   @media screen and (min-width: $large_screen) {
     text-align: left;
     align-items: start;
+  }
+}
+
+.work-section {
+  h2:after {
+    content: "";
+    width: 100vw;
+    height: 16px;
+    background-color: $primaryColor;
+    position: absolute;
+    z-index: -10;
+    inset: 10.5% -10vw;
+
+    @media screen and (min-width: 350px) {
+      inset: 12% -10vw;
+    }
+    @media screen and (min-width: 460px) {
+      inset: 14% -10vw;
+    }
+    @media screen and (min-width: $small_screen) {
+      inset: 17.9% -10vw;
+
+    }
+    @media screen and (min-width: 600px) {
+      inset: 19.9% -10vw;
+    }
+    @media screen and (min-width: $medium_screen) {
+      inset: 28.7% -10vw;
+    }
+    @media screen and (min-width: $large_screen) {
+      inset: 31.4% -10vw;
+      width: 95%;
+
+    }
+    @media screen and (min-width: 1340px) {
+      inset: 33.4% -10vw;
+    }
   }
 }
 
@@ -134,27 +171,6 @@ main {
   }
 }
 
-.work-banner {
-  position: absolute;
-  height: 20px;
-  width: 100%;
-  top: 29.4%;
-  left: 0;
-  background-color: $primaryColor;
-  @media screen and (min-width: $smaller_screen) {
-    top: 27.4%;
-  }
-  @media screen and (min-width: $small_screen) {
-    top: 30.4%;
-  }
-  @media screen and (min-width: $medium_screen) {
-    top: 41.5%;
-  }
-  @media screen and (min-width: $large_screen) {
-    top: 37.8%;
-    width: 80%;
-  }
-}
 
 .auto-banner {
   overflow: hidden;
@@ -163,6 +179,8 @@ main {
   justify-content: center;
   align-items: center;
   margin-top: 2rem;
+  width: 100vw;
+  translate: -10%;
 
 
   ul {

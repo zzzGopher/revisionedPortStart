@@ -3,7 +3,7 @@
 }
 
 html {
-  font-size: 14px;
+  font-size: 16px;
   background-color: black;
 }
 
@@ -38,87 +38,70 @@ html {
   height: 100%;
 }
 
+.section-wrapper {
+  width: 80%;
+  margin-inline: auto;
+}
+@media (min-width: 992px) {
+  .section-wrapper {
+    translate: 50px;
+  }
+}
+
+.modal-backdrop {
+  width: auto;
+}
+
+.table-wrapper > h1 {
+  color: white;
+  margin-top: 5rem;
+  text-align: center;
+  display: grid;
+  justify-content: center;
+  font-size: 1.25em;
+  font-family: "Rubik", sans-serif;
+}
+
 .table-wrapper {
-  border-radius: 30px;
-  padding: 2rem;
+  margin-top: 2rem;
   color: white;
-  border: 2px solid white;
 }
 
-.main-heading {
-  font-size: 2.5em;
-}
-
-.sql-table {
+.list-one {
+  margin-top: 5rem;
+  padding: 0;
+  list-style: none;
   display: grid;
   grid-auto-flow: column;
+  justify-content: space-around;
+  font-family: "Roboto Mono", monospace;
 }
-
-.main-row {
-  display: grid;
-  grid-auto-flow: column;
-  border-bottom: 1px solid white;
-  padding: 1rem;
-  align-items: center;
-  text-transform: uppercase;
-}
-.main-row button, .main-row a {
-  color: white;
-  text-transform: uppercase;
-  text-decoration: none;
+.list-one button {
+  background-color: #B800E7;
   border: none;
-  background-color: #B800E7;
-  padding: 0.5rem 1rem 0.5rem 1rem;
-  border-radius: 30px;
-}
-.main-row button:hover, .main-row a:hover {
-  opacity: 50%;
-  transition: opacity 0.15s ease-in-out;
-}
-
-.main-search {
-  border-radius: 30px;
-  text-decoration: none;
-  border: solid 2px white;
-}
-
-.sql-columns {
-  border-bottom: 1px solid white;
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  justify-content: space-between;
-  text-transform: uppercase;
-  padding: 1rem;
-}
-.sql-columns .holder {
-  width: 127.77px;
-  visibility: hidden;
-}
-.sql-columns th {
-  flex: 1 1 200px;
-}
-
-.sql-data {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  align-items: center;
-  padding: 1rem;
-}
-.sql-data td {
-  flex: 1 1 200px;
-}
-.sql-data button {
-  background-color: black;
-  border: 2px solid #B800E7;
+  border-radius: 10px;
   color: white;
-  border-radius: 30px;
-  text-transform: uppercase;
-  padding: 0.5rem 2rem 0.5rem 2rem;
-  font-weight: bold;
+  font-weight: 500;
 }
-.sql-data button:hover {
-  background-color: #B800E7;
-  transition: background-color 0.15s ease-in-out;
+
+.uInfo {
+  font-weight: 700;
+  font-size: 18px;
+}
+
+table {
+  border-collapse: collapse;
+}
+@media screen and (min-width: 576px) {
+  table {
+    font-family: "Roboto Mono", monospace;
+  }
+}
+
+.table-head {
+  position: sticky;
+  top: 0;
+  background-color: darkgray;
 }
 
 /*# sourceMappingURL=SqlStyles.css.map */

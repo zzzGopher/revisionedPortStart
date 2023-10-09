@@ -3,7 +3,7 @@
 }
 
 html {
-  font-size: 14px;
+  font-size: 16px;
   background-color: black;
 }
 
@@ -36,6 +36,20 @@ body {
 html {
   position: relative;
   height: 100%;
+}
+
+.section-wrapper {
+  width: 80%;
+  margin-inline: auto;
+}
+@media (min-width: 992px) {
+  .section-wrapper {
+    translate: 50px;
+  }
+}
+
+.modal-backdrop {
+  width: auto;
 }
 
 p {
@@ -83,7 +97,7 @@ p {
   box-sizing: border-box;
 }
 .letter-i html {
-  font-size: 14px;
+  font-size: 16px;
   background-color: black;
 }
 .letter-i body {
@@ -113,6 +127,18 @@ p {
 .letter-i html {
   position: relative;
   height: 100%;
+}
+.letter-i .section-wrapper {
+  width: 80%;
+  margin-inline: auto;
+}
+@media (min-width: 992px) {
+  .letter-i .section-wrapper {
+    translate: 50px;
+  }
+}
+.letter-i .modal-backdrop {
+  width: auto;
 }
 .letter-i::after {
   content: " ";
@@ -161,9 +187,9 @@ main {
   display: flex;
   height: 100%;
   flex-direction: column;
-  gap: 4rem;
-  margin-top: 4rem;
-  margin-bottom: 4rem;
+  gap: 5rem;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
   justify-content: start;
 }
 
@@ -180,6 +206,52 @@ main {
   .work-section {
     text-align: left;
     align-items: start;
+  }
+}
+
+.work-section h2:after {
+  content: "";
+  width: 100vw;
+  height: 16px;
+  background-color: #B800E7;
+  position: absolute;
+  z-index: -10;
+  inset: 10.5% -10vw;
+}
+@media screen and (min-width: 350px) {
+  .work-section h2:after {
+    inset: 12% -10vw;
+  }
+}
+@media screen and (min-width: 460px) {
+  .work-section h2:after {
+    inset: 14% -10vw;
+  }
+}
+@media screen and (min-width: 576px) {
+  .work-section h2:after {
+    inset: 17.9% -10vw;
+  }
+}
+@media screen and (min-width: 600px) {
+  .work-section h2:after {
+    inset: 19.9% -10vw;
+  }
+}
+@media screen and (min-width: 768px) {
+  .work-section h2:after {
+    inset: 28.7% -10vw;
+  }
+}
+@media screen and (min-width: 992px) {
+  .work-section h2:after {
+    inset: 31.4% -10vw;
+    width: 95%;
+  }
+}
+@media screen and (min-width: 1340px) {
+  .work-section h2:after {
+    inset: 33.4% -10vw;
   }
 }
 
@@ -211,36 +283,6 @@ main {
   cursor: pointer;
 }
 
-.work-banner {
-  position: absolute;
-  height: 20px;
-  width: 100%;
-  top: 29.4%;
-  left: 0;
-  background-color: #B800E7;
-}
-@media screen and (min-width: 498px) {
-  .work-banner {
-    top: 27.4%;
-  }
-}
-@media screen and (min-width: 576px) {
-  .work-banner {
-    top: 30.4%;
-  }
-}
-@media screen and (min-width: 768px) {
-  .work-banner {
-    top: 41.5%;
-  }
-}
-@media screen and (min-width: 992px) {
-  .work-banner {
-    top: 37.8%;
-    width: 80%;
-  }
-}
-
 .auto-banner {
   overflow: hidden;
   display: flex;
@@ -248,6 +290,8 @@ main {
   justify-content: center;
   align-items: center;
   margin-top: 2rem;
+  width: 100vw;
+  translate: -10%;
 }
 .auto-banner ul {
   display: flex;
