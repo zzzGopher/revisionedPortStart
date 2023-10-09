@@ -3,7 +3,7 @@
 }
 
 html {
-  font-size: 14px;
+  font-size: 16px;
   background-color: black;
 }
 
@@ -38,87 +38,140 @@ html {
   height: 100%;
 }
 
+.section-wrapper {
+  width: 80%;
+  margin-inline: auto;
+}
+@media (min-width: 992px) {
+  .section-wrapper {
+    translate: 50px;
+  }
+}
+
+.modal-backdrop {
+  width: auto;
+}
+
+.table-wrapper > h1 {
+  color: white;
+  text-align: center;
+  display: grid;
+  justify-content: center;
+  font-size: 1.25em;
+  font-family: "Rubik", sans-serif;
+}
+
 .table-wrapper {
-  border-radius: 30px;
-  padding: 2rem;
+  margin-top: 5rem;
   color: white;
-  border: 2px solid white;
+  width: 100%;
 }
 
-.main-heading {
-  font-size: 2.5em;
-}
-
-.sql-table {
+.header-grid {
   display: grid;
   grid-auto-flow: column;
-}
-
-.main-row {
-  display: grid;
-  grid-auto-flow: column;
-  border-bottom: 1px solid white;
-  padding: 1rem;
   align-items: center;
-  text-transform: uppercase;
+  justify-content: space-evenly;
+  grid-gap: 2rem;
 }
-.main-row button, .main-row a {
-  color: white;
-  text-transform: uppercase;
-  text-decoration: none;
+.header-grid h1 {
+  margin: 0;
+}
+.header-grid button {
   border: none;
   background-color: #B800E7;
-  padding: 0.5rem 1rem 0.5rem 1rem;
-  border-radius: 30px;
-}
-.main-row button:hover, .main-row a:hover {
-  opacity: 50%;
-  transition: opacity 0.15s ease-in-out;
-}
-
-.main-search {
-  border-radius: 30px;
-  text-decoration: none;
-  border: solid 2px white;
-}
-
-.sql-columns {
-  border-bottom: 1px solid white;
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  justify-content: space-between;
-  text-transform: uppercase;
-  padding: 1rem;
-}
-.sql-columns .holder {
-  width: 127.77px;
-  visibility: hidden;
-}
-.sql-columns th {
-  flex: 1 1 200px;
-}
-
-.sql-data {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  align-items: center;
-  padding: 1rem;
-}
-.sql-data td {
-  flex: 1 1 200px;
-}
-.sql-data button {
-  background-color: black;
-  border: 2px solid #B800E7;
+  border-radius: 1rem;
   color: white;
-  border-radius: 30px;
-  text-transform: uppercase;
-  padding: 0.5rem 2rem 0.5rem 2rem;
-  font-weight: bold;
+  font-weight: 400;
+  padding: 0.12rem 1rem;
+  font-size: 14px;
 }
-.sql-data button:hover {
+@media screen and (min-width: 992px) {
+  .header-grid button {
+    font-size: 1.25em;
+  }
+}
+.header-grid .add-btn {
+  display: none;
+}
+@media screen and (min-width: 992px) {
+  .header-grid .add-btn {
+    display: block;
+  }
+}
+.header-grid .search-btn {
+  display: none;
+}
+@media screen and (min-width: 992px) {
+  .header-grid .search-btn {
+    display: block;
+  }
+}
+@media screen and (min-width: 992px) {
+  .header-grid {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+  }
+}
+
+.btn-flex {
+  gap: 2rem;
+  display: flex;
+}
+
+.list-one {
+  margin-top: 3rem;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: space-around;
+  align-items: center;
+  font-family: "Roboto Mono", monospace;
+}
+.list-one button {
   background-color: #B800E7;
-  transition: background-color 0.15s ease-in-out;
+  border: none;
+  border-radius: 10px;
+  color: white;
+}
+
+.uInfo {
+  font-weight: 700;
+  font-size: 18px;
+}
+
+table {
+  margin-top: 2rem;
+  border-collapse: collapse;
+  font-family: "Roboto Mono", monospace;
+}
+@media screen and (min-width: 576px) {
+  table {
+    font-family: "Roboto Mono", monospace;
+  }
+}
+
+tbody:first-of-type {
+  display: none;
+}
+
+tbody {
+  display: grid;
+  margin-bottom: 0.5rem;
+}
+tbody tr {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+  padding: 0.5rem;
+  background-color: #3C004A;
+}
+
+tbody > tr:nth-child(2n) {
+  background-color: #1D1C1E;
 }
 
 /*# sourceMappingURL=SqlStyles.css.map */

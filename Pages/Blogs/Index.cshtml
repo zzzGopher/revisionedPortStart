@@ -8,87 +8,159 @@
 
 }
 
-<div>
 
-    <div class="container pb-5 align-items-center justify-content-center">
-        <h1 class="text-white h1 pt-5">
-            SQL Tables Example
+<section class="table-wrapper">
+
+    <div class="header-grid">
+        <h1>
+            SQL Example
         </h1>
+        <div class="btn-flex">
+            <button class="add-btn">Add</button>
+            <button>update</button>
+            <button class="search-btn">Search</button>
+        </div>
+    </div>
 
 
-        <form METHOD="get" class="form d-flex gap-4 py-2 mb-2">
-            <input class="fs-4 input-group-text" asp-for="nameParam" type="search"/>
-            <input class="btn fs-5 flex-grow-1 btn-sm btn-outline-danger" value="Search" type="submit">
-            <a asp-page-handler="Refresh" value="Back" class="btn fs-5 d-flex align-items-center justify-content-center flex-grow-1 btn-sm btn-outline-danger">Refresh</a>
-        </form>
+    @* <form METHOD="get" class="form d-flex gap-4 py-2 mb-2"> *@
+    @*     <input class="fs-4 input-group-text" asp-for="nameParam" type="search"/> *@
+    @*     <input class="btn fs-5 flex-grow-1 btn-sm btn-outline-danger" value="Search" type="submit"> *@
+    @*     <a asp-page-handler="Refresh" value="Back" class="btn fs-5 d-flex align-items-center justify-content-center flex-grow-1 btn-sm btn-outline-danger">Refresh</a> *@
+    @* </form> *@
 
-        <div class="table-wrapper">
-            <table class="sql-table">
-                <tr class="main-row">
-                    <th class="main-heading">
-                        User Info
-                    </th>
+    @* <div class="table-wrapper"> *@
+    @*     <table class="sql-table"> *@
+    @*         <tr class="main-row"> *@
+    @*             <th class="main-heading"> *@
+    @*                 User Info *@
+    @*             </th> *@
+    @*             <td> *@
+    @*                 <button class="update-button">Update</button> *@
+    @*             </td> *@
+    @*             <td> *@
+    @*                 <a href="Blogs/Addusers" type="button"> *@
+    @* <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"> *@
+    @*     <path fill="white" d="M11 9h4v2h-4v4H9v-4H5V9h4V5h2v4zm-1 11a10 10 0 1 1 0-20a10 10 0 0 1 0 20zm0-2a8 8 0 1 0 0-16a8 8 0 0 0 0 16z"/> *@
+    @* </svg> *@
+    @*                 </a> *@
+    @*             </td> *@
+    @* *@
+    @*             <td> *@
+    @* <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"> *@
+    @*     <path fill="currentColor" d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5A6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5S14 7.01 14 9.5S11.99 14 9.5 14z"/> *@
+    @* </svg> *@
+    @*             </td> *@
+    @*         </tr> *@
+    @*         <tr class="sql-columns"> *@
+    @*             <th>User</th> *@
+    @*             <th>ID</th> *@
+    @*             <th>State</th> *@
+    @*             <th>City</th> *@
+    @*             <th aria-hidden="true" class="holder">holder</th> *@
+    @*         </tr> *@
+    @*         @foreach (var user in Model.newUsers) *@
+    @*         { *@
+    @*                 $1$ <tr class="sql-data"> #1# *@
+    @*                 $1$     <td class=""> #1# *@
+    @*                 $1$         @user.City #1# *@
+    @*                 $1$     </td> #1# *@
+    @*                 $1$     <td class="">@user.Name</td> #1# *@
+    @*                 $1$     <td class="">@user.Id</td> #1# *@
+    @*                 $1$     <td class="">@user.State</td> #1# *@
+    @*                 $1$     <td> #1# *@
+    @*                 $1$         <button data-toggle="modal" onclick="showModal()">Delete</button> #1# *@
+    @*                 $1$     </td> #1# *@
+    @*                 $1$ </tr> #1# *@
+    @*         } *@
+    @*     </table> *@
+    @* </div> *@
+
+    <table class="table-wrapper">
+
+        <tr>
+            <ul class="list-one">
+                <li class="uInfo">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 16 16">
+                        <g fill="white">
+                            <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6Z"/><path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1ZM4.118 4L4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118ZM2.5 3h11V2h-11v1Z"/>
+                        </g>
+                    </svg>
+                </li>
+
+                <li>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 20 20">
+                        <path fill="white" d="M11 9h4v2h-4v4H9v-4H5V9h4V5h2v4zm-1 11a10 10 0 1 1 0-20a10 10 0 0 1 0 20zm0-2a8 8 0 1 0 0-16a8 8 0 0 0 0 16z"/>
+                    </svg>
+                </li>
+                <li>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
+                        <path fill="currentColor" d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5A6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5S14 7.01 14 9.5S11.99 14 9.5 14z"/>
+                    </svg>
+                </li>
+            </ul>
+        </tr>
+
+        <div class="tbody-grid">
+            @foreach (var user in Model.newUsers)
+            {
+                <tbody>
+                <tr>
+                    <th>Name:</th>
                     <td>
-                        <a href="Blogs/Addusers" type="button">Add</a>
-                    </td>
-                    <td>
-                        <button>Update</button>
-                    </td>
-                    <td>
-                        <input class="main-search" type="search"/>
+                        @user.Name
                     </td>
                 </tr>
-                <tr class="sql-columns">
-                    <th>User</th>
-                    <th>ID</th>
-                    <th>State</th>
-                    <th>City</th>
-                    <th aria-hidden="true" class="holder">holder</th>
+                <tr>
+                    <th>City:</th>
+                    <td>
+                        @user.City
+                    </td>
                 </tr>
-                @foreach (var user in Model.newUsers)
-                {
-                    <tr class="sql-data">
-                        <td class="">
-                            @user.City
-                        </td>
-                        <td class="">@user.Name</td>
-                        <td class="">@user.Id</td>
-                        <td class="">@user.State</td>
-                        <td>
-                            <button data-toggle="modal" onclick="showModal()">Delete</button>
-                        </td>
-                    </tr>
-                }
-            </table>
+                <tr>
+                    <th>State:</th>
+                    <td>
+                        @user.State
+                    </td>
+                </tr>
+                <tr>
+                    <th>Id:</th>
+                    <td>
+                        @user.Id
+                    </td>
+                </tr>
+                </tbody>
+            }
         </div>
 
 
-        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
+    </table>
 
-                    <div class="modal-header">
-                        <h5 class="modal-title h2" id="exampleModalLongTitle">Delete User</h5>
-                        <button type="button" class="myModalX btn btn-dark" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h5 class="modal-title h2" id="exampleModalLongTitle">Delete User</h5>
+                    <button type="button" class="myModalX btn btn-dark" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
 
 
-                    <div class="modal-body">
-                        <form class="d-flex gap-2 align-content-center" asp-page-handler="DeleteUserWithId" method="POST">
-                            <input class="h-auto" placeholder="ID" asp-for="newUsersModel.Id" type="text">
-                            <input class="btn btn-sm btn-danger" type="submit">
-                        </form>
-                    </div>
+                <div class="modal-body">
+                    <form class="d-flex gap-2 align-content-center" asp-page-handler="DeleteUserWithId" method="POST">
+                        <input class="h-auto" placeholder="ID" asp-for="newUsersModel.Id" type="text">
+                        <input class="btn btn-sm btn-danger" type="submit">
+                    </form>
                 </div>
             </div>
         </div>
-
-
     </div>
 
-</div>
+
+</section>
+
 
 <style>
     .lob>td{

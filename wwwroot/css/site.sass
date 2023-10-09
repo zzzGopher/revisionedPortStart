@@ -14,16 +14,19 @@ $hero-small: 6ch
 
 $primaryColor: #B800E7
 $secondaryColor: #242424
+$gridColor: #3C004A
+$gridSecondaryColor: #1D1C1E
 
-$section-spacing: 4rem
+$section-spacing: 5rem
 $letter-spacing: 1rem
+
 
 *, *::before, *::after
   box-sizing: border-box
 
 
 html
-  font-size: 14px
+  font-size: 16px
   background-color: black
 
 body
@@ -53,4 +56,12 @@ html
   position: relative
   height: 100%
 
+.section-wrapper
+  width: 80%
+  margin-inline: auto
+  @media (min-width: $large_screen)
+    translate: 50px
 
+
+.modal-backdrop
+  width: auto

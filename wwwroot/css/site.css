@@ -3,7 +3,7 @@
 }
 
 html {
-  font-size: 14px;
+  font-size: 16px;
   background-color: black;
 }
 
@@ -36,6 +36,20 @@ body {
 html {
   position: relative;
   height: 100%;
+}
+
+.section-wrapper {
+  width: 80%;
+  margin-inline: auto;
+}
+@media (min-width: 992px) {
+  .section-wrapper {
+    translate: 50px;
+  }
+}
+
+.modal-backdrop {
+  width: auto;
 }
 
 /*# sourceMappingURL=site.css.map */

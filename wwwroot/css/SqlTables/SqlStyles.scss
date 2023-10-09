@@ -14,86 +14,220 @@
   }
 }
 
-.table-wrapper {
-  border-radius: 30px;
-  padding: 2rem;
+@mixin hide-buttons {
+  @media screen and (min-width: $large_screen) {
+    display: block;
+  }
+}
+
+
+//.table-wrapper {
+//  border-radius: 30px;
+//  padding: 2rem;
+//  color: white;
+//  border: 2px solid white;
+//}
+
+//.main-heading {
+//  font-size: $font-largest;
+//}
+//
+//.sql-table {
+//  @media screen and (min-width: 768px) {
+//    display: grid;
+//    grid-auto-flow: column;
+//  }
+//
+//}
+//
+//.main-row {
+//  display: grid;
+//  grid-auto-flow: column;
+//  border-bottom: 1px solid white;
+//  padding: 1rem;
+//  align-items: center;
+//  text-transform: uppercase;
+//
+//  button, a {
+//    color: white;
+//    text-transform: uppercase;
+//    text-decoration: none;
+//    border: none;
+//    background-color: $primaryColor;
+//    padding: .5rem 1rem .5rem 1rem;
+//    border-radius: 30px;
+//    @include --custom-hover;
+//  }
+//}
+//
+//.main-search {
+//  border-radius: 30px;
+//  text-decoration: none;
+//  border: solid 2px white;
+//}
+//
+//.sql-columns {
+//  border-bottom: 1px solid white;
+//  display: grid;
+//  grid-template-columns: repeat(5, 1fr);
+//  justify-content: space-between;
+//
+//  text-transform: uppercase;
+//
+//  padding: 1rem;
+//
+//  .holder {
+//    width: 127.77px;
+//    visibility: hidden;
+//  }
+//
+//  th {
+//    flex: 1 1 200px;
+//  }
+//}
+//
+//.sql-data {
+//  display: grid;
+//  grid-template-columns: repeat(5, 1fr);
+//  align-items: center;
+//  padding: 1rem;
+//
+//  td {
+//    flex: 1 1 200px;
+//    font-size: 18px;
+//  }
+//
+//  button {
+//    background-color: black;
+//    border: 2px solid $primaryColor;
+//    color: white;
+//    border-radius: 30px;
+//    text-transform: uppercase;
+//    padding: .5rem 2rem .5rem 2rem;
+//    font-weight: bold;
+//    @include --custom-hover2;
+//  }
+//}
+
+.table-wrapper > h1 {
   color: white;
-  border: 2px solid white;
+  text-align: center;
+  display: grid;
+  justify-content: center;
+  font-size: $font-small;
+  font-family: "Rubik", sans-serif;
 }
 
-.main-heading {
-  font-size: $font-largest;
+.table-wrapper {
+  margin-top: 5rem;
+  color: white;
+  width: 100%;
 }
 
-.sql-table {
+.header-grid {
   display: grid;
   grid-auto-flow: column;
-}
-
-.main-row {
-  display: grid;
-  grid-auto-flow: column;
-  border-bottom: 1px solid white;
-  padding: 1rem;
   align-items: center;
-  text-transform: uppercase;
+  justify-content: space-evenly;
+  grid-gap: 2rem;
 
-  button, a {
-    color: white;
-    text-transform: uppercase;
-    text-decoration: none;
-    border: none;
-    background-color: $primaryColor;
-    padding: .5rem 1rem .5rem 1rem;
-    border-radius: 30px;
-    @include --custom-hover;
-  }
-}
-
-.main-search {
-  border-radius: 30px;
-  text-decoration: none;
-  border: solid 2px white;
-}
-
-.sql-columns {
-  border-bottom: 1px solid white;
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  justify-content: space-between;
-
-  text-transform: uppercase;
-
-  padding: 1rem;
-
-  .holder {
-    width: 127.77px;
-    visibility: hidden;
-  }
-
-  th {
-    flex: 1 1 200px;
-  }
-}
-
-.sql-data {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  align-items: center;
-  padding: 1rem;
-
-  td {
-    flex: 1 1 200px;
+  h1 {
+    margin: 0;
   }
 
   button {
-    background-color: black;
-    border: 2px solid $primaryColor;
+    border: none;
+    background-color: $primaryColor;
+    border-radius: 1rem;
     color: white;
-    border-radius: 30px;
-    text-transform: uppercase;
-    padding: .5rem 2rem .5rem 2rem;
-    font-weight: bold;
-    @include --custom-hover2;
+    font-weight: 400;
+    padding: 0.12rem 1rem;
+    font-size: 14px;
+
+    @media screen and (min-width: $large_screen) {
+      font-size: $font-small;
+
+    }
+
+  }
+
+  .add-btn {
+    display: none;
+    @include hide-buttons;
+  }
+
+  .search-btn {
+    display: none;
+    @include hide-buttons;
+  }
+
+  @media screen and (min-width: $large_screen) {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
   }
 }
+
+.btn-flex {
+  gap: 2rem;
+  display: flex;
+}
+
+.list-one {
+  margin-top: 3rem;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: space-around;
+  align-items: center;
+  font-family: "Roboto Mono", monospace;
+
+  button {
+    background-color: $primaryColor;
+    border: none;
+    border-radius: 10px;
+    color: white;
+  }
+}
+
+.uInfo {
+  font-weight: 700;
+  font-size: 18px;
+}
+
+
+table {
+  margin-top: 2rem;
+  border-collapse: collapse;
+  font-family: "Roboto Mono", monospace;
+  @media screen and (min-width: $small_screen) {
+    font-family: "Roboto Mono", monospace;
+  }
+}
+
+tbody:first-of-type {
+  display: none;
+}
+
+tbody {
+  display: grid;
+  margin-bottom: .5rem;
+
+  tr {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    padding: .5rem;
+    background-color: $gridColor;
+  }
+
+
+}
+
+
+tbody > tr:nth-child(2n) {
+  background-color: $gridSecondaryColor;
+}
+

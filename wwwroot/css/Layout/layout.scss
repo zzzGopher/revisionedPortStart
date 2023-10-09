@@ -3,6 +3,8 @@
 
 .navbar {
   padding: 1rem 2rem 0 2rem;
+  z-index: 999;
+  background-color: black;
   @media screen and (min-width: $large_screen) {
     display: none;
   }
