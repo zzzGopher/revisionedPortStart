@@ -7,13 +7,13 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddRazorPages();
 
-builder.Services.AddSingleton<IEmployeeRespository, MockUserRepository>();
+builder.Services.AddTransient<IEmployeeRespository, MockUserRepository>();
 
 builder.Services.AddTransient<IDataAccess, DataAccess>();
 
 builder.Services.AddTransient<IgetConnection, getConnection>();
 
-builder.Services.AddSingleton<IDeleteUser, DeleteUser>();
+builder.Services.AddTransient<IDeleteUser, DeleteUser>();
 
 
 builder.Services.Configure<ConnectionStrings>(builder.Configuration.GetSection(nameof(ConnectionStrings)));

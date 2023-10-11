@@ -37,7 +37,7 @@ public class Index : PageModel
 
         if (!nameParam.IsNullOrEmpty())
         {
-            _logger.LogInformation("working");
+            _logger.LogInformation("loaded users");
 
             someData = someData.Where(d => d.Name.Contains(nameParam));
         }
@@ -57,5 +57,19 @@ public class Index : PageModel
     {
         await _deleteUser.DeleteWithID(newUsersModel.Id);
         return Redirect("/Blogs");
+    }
+
+    public async Task<IActionResult> OnPostAddUsers()
+    {
+        try
+        {
+            await _data.AddUser(newUsersModel.Name, newUsersModel.City, newUsersModel.State);
+            return Redirect("/Blogs");
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            throw;
+        }
     }
 }

@@ -9,12 +9,15 @@ public class DataAccess : IDataAccess
 {
     private readonly IgetConnection _getConnection;
 
+    private readonly ILogger<DataAccess> _logger;
+
 
     private List<newUsers> _newUsersList;
 
-    public DataAccess(IgetConnection getConnection)
+    public DataAccess(IgetConnection getConnection, ILogger<DataAccess> logger)
     {
         _getConnection = getConnection;
+        _logger = logger;
     }
 
 
@@ -80,7 +83,7 @@ public class DataAccess : IDataAccess
         }
         catch (Exception e)
         {
-            Console.Write(e.Source, e.Message);
+            _logger.LogInformation(e.Source, e.Message);
             throw e;
         }
     }

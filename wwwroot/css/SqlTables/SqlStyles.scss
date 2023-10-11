@@ -20,6 +20,42 @@
   }
 }
 
+@mixin form-mobile-grid {
+  position: relative;
+  z-index: 9999;
+  display: grid;
+  align-items: center;
+  grid-gap: .5rem;
+}
+
+@mixin main-modal-body {
+  position: fixed;
+  z-index: 1;
+  margin: 0 auto;
+  width: 100vw;
+  height: 100vh;
+  inset: 0 0;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+@mixin modal-input {
+  border: none;
+  border-radius: 1rem;
+  padding: .5rem;
+}
+
+@mixin modal-submit {
+  border: none;
+  background-color: $primaryColor;
+  height: 3rem;
+  color: white;
+  font-weight: 600;
+  font-size: 22px;
+  border-radius: 1rem;
+}
+
 
 //.table-wrapper {
 //  border-radius: 30px;
@@ -120,6 +156,7 @@
 
 .table-wrapper {
   margin-top: 5rem;
+  padding-bottom: 5rem;
   color: white;
   width: 100%;
 }
@@ -133,6 +170,7 @@
 
   h1 {
     margin: 0;
+    white-space: nowrap;
   }
 
   button {
@@ -161,6 +199,11 @@
     @include hide-buttons;
   }
 
+  .dlt-btn {
+    display: none;
+    @include hide-buttons;
+  }
+
   @media screen and (min-width: $large_screen) {
     display: flex;
     flex-direction: column;
@@ -184,15 +227,26 @@
   align-items: center;
   font-family: "Roboto Mono", monospace;
 
+  li {
+    svg {
+      cursor: pointer;
+    }
+  }
+
+
   button {
     background-color: $primaryColor;
     border: none;
     border-radius: 10px;
     color: white;
   }
+
+  @media screen and (min-width: $large_screen) {
+    display: none;
+  }
 }
 
-.uInfo {
+.delete {
   font-weight: 700;
   font-size: 18px;
 }
@@ -223,6 +277,14 @@ tbody {
     background-color: $gridColor;
   }
 
+  tr:first-of-type {
+    border-radius: 10px 10px 0 0;
+  }
+
+  tr:last-of-type {
+    border-radius: 0 0 10px 10px;
+  }
+
 
 }
 
@@ -231,3 +293,62 @@ tbody > tr:nth-child(2n) {
   background-color: $gridSecondaryColor;
 }
 
+
+[data-modal-body="false"] {
+  display: none;
+}
+
+[data-modal-body="true"] {
+  display: flex;
+}
+
+
+#search-modal {
+  @include main-modal-body;
+
+  .form-flex {
+    @include form-mobile-grid;
+
+  }
+
+  .search-input {
+    @include modal-input;
+  }
+
+  .search-submit {
+    @include modal-submit;
+  }
+}
+
+#delete-modal {
+  @include main-modal-body;
+
+  .delete-flex {
+    @include form-mobile-grid;
+  }
+
+  .delete-input {
+    @include modal-input;
+  }
+
+  .delete-submit {
+    @include modal-submit;
+  }
+}
+
+#add-modal {
+  @include main-modal-body;
+
+  .add-flex {
+    @include form-mobile-grid;
+  }
+
+  input {
+    @include modal-input;
+  }
+
+  .user-submit {
+    @include modal-submit;
+  }
+
+}
