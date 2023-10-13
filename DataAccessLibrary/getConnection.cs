@@ -1,11 +1,11 @@
 using Microsoft.Data.SqlClient;
 using Microsoft.Extensions.Options;
 
-namespace uTestAndForms.Data;
+namespace DataAccessLibrary;
 
 public class getConnection : IgetConnection
 {
-    private ConnectionStrings _connectionStrings;
+    private readonly ConnectionStrings _connectionStrings;
 
     public getConnection(IOptions<ConnectionStrings> connectionString)
     {
@@ -14,7 +14,7 @@ public class getConnection : IgetConnection
 
     public async Task<SqlConnection> getConnections()
     {
-        SqlConnection connection = new SqlConnection(_connectionStrings.DefaultConnectionString);
+        var connection = new SqlConnection(_connectionStrings.DefaultConnectionString);
         return connection;
     }
 }

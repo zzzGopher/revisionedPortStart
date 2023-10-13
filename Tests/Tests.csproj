@@ -1,27 +1,59 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
         <TargetFramework>net7.0</TargetFramework>
-        <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
-        <UserSecretsId>165c9f34-ed02-432a-a3c6-bf4fe1ec3d70</UserSecretsId>
+        <Nullable>enable</Nullable>
+
+        <IsPackable>false</IsPackable>
+        <IsTestProject>true</IsTestProject>
     </PropertyGroup>
 
+    <ItemGroup>
+        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.7.1"/>
+        <PackageReference Include="Moq" Version="4.20.69"/>
+        <PackageReference Include="xunit" Version="2.4.2"/>
+        <PackageReference Include="xunit.runner.visualstudio" Version="2.4.5">
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+            <PrivateAssets>all</PrivateAssets>
+        </PackageReference>
+        <PackageReference Include="coverlet.collector" Version="3.2.0">
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+            <PrivateAssets>all</PrivateAssets>
+        </PackageReference>
+    </ItemGroup>
 
     <ItemGroup>
-        <Content Include=".idea\.idea.uTestAndForms\.idea\.gitignore"/>
-        <Content Include=".idea\.idea.uTestAndForms\.idea\encodings.xml"/>
-        <Content Include=".idea\.idea.uTestAndForms\.idea\indexLayout.xml"/>
-        <Content Include=".idea\.idea.uTestAndForms\.idea\prettier.xml"/>
-        <Content Include=".idea\.idea.uTestAndForms\.idea\projectSettingsUpdater.xml"/>
-        <Content Include=".idea\.idea.uTestAndForms\.idea\workspace.xml"/>
+        <ProjectReference Include="..\DataAccessLibrary\DataAccessLibrary.csproj"/>
+        <ProjectReference Include="..\uTestAndForms.csproj"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <Compile Remove="obj\**"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <EmbeddedResource Remove="obj\**"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <None Remove="obj\**"/>
+        <None Include="bin\Debug\net7.0\Web.config"/>
+    </ItemGroup>
+
+    <ItemGroup>
         <Content Include="bin\Debug\net7.0\appsettings.Development.json"/>
         <Content Include="bin\Debug\net7.0\appsettings.json"/>
+        <Content Include="bin\Debug\net7.0\Azure.Core.dll"/>
+        <Content Include="bin\Debug\net7.0\Azure.Identity.dll"/>
+        <Content Include="bin\Debug\net7.0\CoverletSourceRootsMapping"/>
         <Content Include="bin\Debug\net7.0\cs\Microsoft.TestPlatform.CommunicationUtilities.resources.dll"/>
         <Content Include="bin\Debug\net7.0\cs\Microsoft.TestPlatform.CoreUtilities.resources.dll"/>
         <Content Include="bin\Debug\net7.0\cs\Microsoft.TestPlatform.CrossPlatEngine.resources.dll"/>
         <Content Include="bin\Debug\net7.0\cs\Microsoft.VisualStudio.TestPlatform.Common.resources.dll"/>
         <Content Include="bin\Debug\net7.0\cs\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll"/>
+        <Content Include="bin\Debug\net7.0\DataAccessLibrary.dll"/>
+        <Content Include="bin\Debug\net7.0\DataAccessLibrary.pdb"/>
         <Content Include="bin\Debug\net7.0\de\Microsoft.TestPlatform.CommunicationUtilities.resources.dll"/>
         <Content Include="bin\Debug\net7.0\de\Microsoft.TestPlatform.CoreUtilities.resources.dll"/>
         <Content Include="bin\Debug\net7.0\de\Microsoft.TestPlatform.CrossPlatEngine.resources.dll"/>
@@ -52,6 +84,17 @@
         <Content Include="bin\Debug\net7.0\ko\Microsoft.TestPlatform.CrossPlatEngine.resources.dll"/>
         <Content Include="bin\Debug\net7.0\ko\Microsoft.VisualStudio.TestPlatform.Common.resources.dll"/>
         <Content Include="bin\Debug\net7.0\ko\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll"/>
+        <Content Include="bin\Debug\net7.0\Microsoft.Bcl.AsyncInterfaces.dll"/>
+        <Content Include="bin\Debug\net7.0\Microsoft.Data.SqlClient.dll"/>
+        <Content Include="bin\Debug\net7.0\Microsoft.Identity.Client.dll"/>
+        <Content Include="bin\Debug\net7.0\Microsoft.Identity.Client.Extensions.Msal.dll"/>
+        <Content Include="bin\Debug\net7.0\Microsoft.IdentityModel.Abstractions.dll"/>
+        <Content Include="bin\Debug\net7.0\Microsoft.IdentityModel.JsonWebTokens.dll"/>
+        <Content Include="bin\Debug\net7.0\Microsoft.IdentityModel.Logging.dll"/>
+        <Content Include="bin\Debug\net7.0\Microsoft.IdentityModel.Protocols.dll"/>
+        <Content Include="bin\Debug\net7.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll"/>
+        <Content Include="bin\Debug\net7.0\Microsoft.IdentityModel.Tokens.dll"/>
+        <Content Include="bin\Debug\net7.0\Microsoft.SqlServer.Server.dll"/>
         <Content Include="bin\Debug\net7.0\Microsoft.TestPlatform.CommunicationUtilities.dll"/>
         <Content Include="bin\Debug\net7.0\Microsoft.TestPlatform.CoreUtilities.dll"/>
         <Content Include="bin\Debug\net7.0\Microsoft.TestPlatform.CrossPlatEngine.dll"/>
@@ -60,6 +103,7 @@
         <Content Include="bin\Debug\net7.0\Microsoft.VisualStudio.CodeCoverage.Shim.dll"/>
         <Content Include="bin\Debug\net7.0\Microsoft.VisualStudio.TestPlatform.Common.dll"/>
         <Content Include="bin\Debug\net7.0\Microsoft.VisualStudio.TestPlatform.ObjectModel.dll"/>
+        <Content Include="bin\Debug\net7.0\Microsoft.Win32.SystemEvents.dll"/>
         <Content Include="bin\Debug\net7.0\Newtonsoft.Json.dll"/>
         <Content Include="bin\Debug\net7.0\NuGet.Frameworks.dll"/>
         <Content Include="bin\Debug\net7.0\pl\Microsoft.TestPlatform.CommunicationUtilities.resources.dll"/>
@@ -72,16 +116,35 @@
         <Content Include="bin\Debug\net7.0\pt-BR\Microsoft.TestPlatform.CrossPlatEngine.resources.dll"/>
         <Content Include="bin\Debug\net7.0\pt-BR\Microsoft.VisualStudio.TestPlatform.Common.resources.dll"/>
         <Content Include="bin\Debug\net7.0\pt-BR\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll"/>
+        <Content Include="bin\Debug\net7.0\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll"/>
+        <Content Include="bin\Debug\net7.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll"/>
+        <Content Include="bin\Debug\net7.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll"/>
+        <Content Include="bin\Debug\net7.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll"/>
+        <Content Include="bin\Debug\net7.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll"/>
+        <Content Include="bin\Debug\net7.0\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll"/>
+        <Content Include="bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll"/>
+        <Content Include="bin\Debug\net7.0\runtimes\win\lib\net7.0\Microsoft.Win32.SystemEvents.dll"/>
+        <Content Include="bin\Debug\net7.0\runtimes\win\lib\net7.0\System.Drawing.Common.dll"/>
+        <Content Include="bin\Debug\net7.0\runtimes\win\lib\net7.0\System.Security.Cryptography.ProtectedData.dll"/>
+        <Content Include="bin\Debug\net7.0\runtimes\win\lib\net7.0\System.Windows.Extensions.dll"/>
         <Content Include="bin\Debug\net7.0\ru\Microsoft.TestPlatform.CommunicationUtilities.resources.dll"/>
         <Content Include="bin\Debug\net7.0\ru\Microsoft.TestPlatform.CoreUtilities.resources.dll"/>
         <Content Include="bin\Debug\net7.0\ru\Microsoft.TestPlatform.CrossPlatEngine.resources.dll"/>
         <Content Include="bin\Debug\net7.0\ru\Microsoft.VisualStudio.TestPlatform.Common.resources.dll"/>
         <Content Include="bin\Debug\net7.0\ru\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll"/>
+        <Content Include="bin\Debug\net7.0\System.Configuration.ConfigurationManager.dll"/>
+        <Content Include="bin\Debug\net7.0\System.Drawing.Common.dll"/>
+        <Content Include="bin\Debug\net7.0\System.IdentityModel.Tokens.Jwt.dll"/>
+        <Content Include="bin\Debug\net7.0\System.Memory.Data.dll"/>
+        <Content Include="bin\Debug\net7.0\System.Runtime.Caching.dll"/>
+        <Content Include="bin\Debug\net7.0\System.Security.Cryptography.ProtectedData.dll"/>
+        <Content Include="bin\Debug\net7.0\System.Security.Permissions.dll"/>
+        <Content Include="bin\Debug\net7.0\System.Windows.Extensions.dll"/>
         <Content Include="bin\Debug\net7.0\testhost.dll"/>
-        <Content Include="bin\Debug\net7.0\TestProject1.deps.json"/>
-        <Content Include="bin\Debug\net7.0\TestProject1.dll"/>
-        <Content Include="bin\Debug\net7.0\TestProject1.pdb"/>
-        <Content Include="bin\Debug\net7.0\TestProject1.runtimeconfig.json"/>
+        <Content Include="bin\Debug\net7.0\Tests.deps.json"/>
+        <Content Include="bin\Debug\net7.0\Tests.dll"/>
+        <Content Include="bin\Debug\net7.0\Tests.pdb"/>
+        <Content Include="bin\Debug\net7.0\Tests.runtimeconfig.json"/>
         <Content Include="bin\Debug\net7.0\tr\Microsoft.TestPlatform.CommunicationUtilities.resources.dll"/>
         <Content Include="bin\Debug\net7.0\tr\Microsoft.TestPlatform.CoreUtilities.resources.dll"/>
         <Content Include="bin\Debug\net7.0\tr\Microsoft.TestPlatform.CrossPlatEngine.resources.dll"/>
@@ -110,111 +173,10 @@
         <Content Include="bin\Debug\net7.0\zh-Hant\Microsoft.TestPlatform.CrossPlatEngine.resources.dll"/>
         <Content Include="bin\Debug\net7.0\zh-Hant\Microsoft.VisualStudio.TestPlatform.Common.resources.dll"/>
         <Content Include="bin\Debug\net7.0\zh-Hant\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll"/>
-        <Content Include="obj\Debug\net7.0\uTestAndForms.AssemblyInfoInputs.cache"/>
-        <Content Include="obj\Debug\net7.0\uTestAndForms.assets.cache"/>
-        <Content Include="obj\Debug\net7.0\uTestAndForms.csproj.AssemblyReference.cache"/>
-        <Content Include="obj\Debug\net7.0\uTestAndForms.csproj.CoreCompileInputs.cache"/>
-        <Content Include="obj\Debug\net7.0\uTestAndForms.csproj.FileListAbsolute.txt"/>
-        <Content Include="obj\Debug\net7.0\uTestAndForms.GeneratedMSBuildEditorConfig.editorconfig"/>
-        <Content Include="obj\Debug\net7.0\uTestAndForms.MvcApplicationPartsAssemblyInfo.cache"/>
-        <Content Include="obj\Debug\net7.0\uTestAndForms.RazorAssemblyInfo.cache"/>
-        <Content Include="obj\project.assets.json"/>
-        <Content Include="obj\project.nuget.cache"/>
-        <Content Include="obj\project.packagespec.json"/>
-        <Content Include="obj\rider.project.model.nuget.info"/>
-        <Content Include="obj\rider.project.restore.info"/>
-        <Content Include="obj\uTestAndForms.csproj.nuget.dgspec.json"/>
-        <Content Include="obj\uTestAndForms.csproj.nuget.g.props"/>
-        <Content Include="obj\uTestAndForms.csproj.nuget.g.targets"/>
-        <Content Remove="TestProject1\obj\**"/>
-        <Content Remove="Tests\bin\**"/>
-        <Content Remove="Tests\**"/>
-        <Content Remove="DataAccessLibrary\**"/>
     </ItemGroup>
 
     <ItemGroup>
-        <Compile Include="obj\Debug\net7.0\.NETCoreApp,Version=v7.0.AssemblyAttributes.cs"/>
-        <Compile Include="obj\Debug\net7.0\uTestAndForms.AssemblyInfo.cs"/>
-        <Compile Include="obj\Debug\net7.0\uTestAndForms.GlobalUsings.g.cs"/>
-        <Compile Include="obj\Debug\net7.0\uTestAndForms.RazorAssemblyInfo.cs"/>
-        <Compile Remove="TestProject1\obj\**"/>
-        <Compile Remove="Tests\bin\**"/>
-        <Compile Remove="Tests\**"/>
-        <Compile Remove="DataAccessLibrary\**"/>
-    </ItemGroup>
-
-    <ItemGroup>
-        <Folder Include="obj\Debug\net7.0\refint\"/>
-        <Folder Include="obj\Debug\net7.0\ref\"/>
-        <Folder Include="obj\Debug\net7.0\staticwebassets\"/>
-    </ItemGroup>
-
-    <ItemGroup>
-        <EmbeddedResource Remove="TestProject1\obj\**"/>
-        <EmbeddedResource Remove="Tests\bin\**"/>
-        <EmbeddedResource Remove="Tests\**"/>
-        <EmbeddedResource Remove="DataAccessLibrary\**"/>
-    </ItemGroup>
-
-    <ItemGroup>
-        <None Remove="TestProject1\obj\**"/>
-        <None Include="Web.config">
-            <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-            <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-        </None>
-        <None Remove="Tests\bin\**"/>
-        <None Remove="Tests\**"/>
-        <None Remove="DataAccessLibrary\**"/>
-    </ItemGroup>
-
-    <ItemGroup>
-        <_ContentIncludedByDefault Remove="TestProject1\obj\project.assets.json"/>
-        <_ContentIncludedByDefault Remove="TestProject1\obj\project.packagespec.json"/>
-        <_ContentIncludedByDefault Remove="TestProject1\obj\TestProject1.csproj.nuget.dgspec.json"/>
-        <_ContentIncludedByDefault Remove="TestProject1\bin\Debug\net7.0\TestProject1.deps.json"/>
-        <_ContentIncludedByDefault Remove="TestProject1\bin\Debug\net7.0\TestProject1.runtimeconfig.json"/>
-        <_ContentIncludedByDefault Remove="revisionedPortStart\Pages\Blogs\Addusers\Index.cshtml"/>
-        <_ContentIncludedByDefault Remove="revisionedPortStart\Pages\Blogs\Index.cshtml"/>
-        <_ContentIncludedByDefault Remove="revisionedPortStart\Pages\Error.cshtml"/>
-        <_ContentIncludedByDefault Remove="revisionedPortStart\Pages\Index.cshtml"/>
-        <_ContentIncludedByDefault Remove="revisionedPortStart\Pages\Privacy.cshtml"/>
-        <_ContentIncludedByDefault Remove="revisionedPortStart\Pages\Shared\_Layout.cshtml"/>
-        <_ContentIncludedByDefault Remove="revisionedPortStart\Pages\Shared\_ValidationScriptsPartial.cshtml"/>
-        <_ContentIncludedByDefault Remove="revisionedPortStart\Pages\TestPage.cshtml"/>
-        <_ContentIncludedByDefault Remove="revisionedPortStart\Pages\_ViewImports.cshtml"/>
-        <_ContentIncludedByDefault Remove="revisionedPortStart\Pages\_ViewStart.cshtml"/>
-        <_ContentIncludedByDefault Remove="revisionedPortStart\appsettings.Development.json"/>
-        <_ContentIncludedByDefault Remove="revisionedPortStart\appsettings.json"/>
-        <_ContentIncludedByDefault Remove="revisionedPortStart\Properties\launchSettings.json"/>
-        <_ContentIncludedByDefault Remove="Pages\Blogs\Addusers\Index.cshtml"/>
-        <_ContentIncludedByDefault Remove="ClassLibrary1\obj\ClassLibrary1.csproj.nuget.dgspec.json"/>
-        <_ContentIncludedByDefault Remove="ClassLibrary1\obj\project.assets.json"/>
-        <_ContentIncludedByDefault Remove="ClassLibrary1\obj\project.packagespec.json"/>
-        <_ContentIncludedByDefault Remove="Tests\obj\project.assets.json"/>
-        <_ContentIncludedByDefault Remove="Tests\obj\project.packagespec.json"/>
-        <_ContentIncludedByDefault Remove="Tests\obj\Tests.csproj.nuget.dgspec.json"/>
-        <_ContentIncludedByDefault Remove="DataAccessLibrary\bin\Debug\net7.0\DataAccessLibrary.deps.json"/>
-        <_ContentIncludedByDefault Remove="DataAccessLibrary\obj\DataAccessLibrary.csproj.nuget.dgspec.json"/>
-        <_ContentIncludedByDefault Remove="DataAccessLibrary\obj\project.assets.json"/>
-        <_ContentIncludedByDefault Remove="DataAccessLibrary\obj\project.packagespec.json"/>
-        <_ContentIncludedByDefault Remove="Tests\bin\Debug\net7.0\Web.config"/>
-        <_ContentIncludedByDefault Remove="Tests\bin\Debug\net7.0\appsettings.Development.json"/>
-        <_ContentIncludedByDefault Remove="Tests\bin\Debug\net7.0\appsettings.json"/>
-        <_ContentIncludedByDefault Remove="Tests\bin\Debug\net7.0\Tests.deps.json"/>
-        <_ContentIncludedByDefault Remove="Tests\bin\Debug\net7.0\Tests.runtimeconfig.json"/>
-        <_ContentIncludedByDefault Remove="Tests\bin\Debug\net7.0\uTestAndForms.deps.json"/>
-        <_ContentIncludedByDefault Remove="Tests\bin\Debug\net7.0\uTestAndForms.runtimeconfig.json"/>
-        <_ContentIncludedByDefault Remove="Tests\bin\Debug\net7.0\uTestAndForms.staticwebassets.runtime.json"/>
-    </ItemGroup>
-
-    <ItemGroup>
-        <PackageReference Include="Microsoft.Data.SqlClient" Version="5.1.1"/>
-        <PackageReference Include="System.Configuration.ConfigurationManager" Version="7.0.0"/>
-    </ItemGroup>
-
-    <ItemGroup>
-        <ProjectReference Include="DataAccessLibrary\DataAccessLibrary.csproj"/>
+        <Folder Include="UI\"/>
     </ItemGroup>
 
 </Project>

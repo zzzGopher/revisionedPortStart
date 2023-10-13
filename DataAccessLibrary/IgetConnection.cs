@@ -1,6 +1,6 @@
 using Microsoft.Data.SqlClient;
 
-namespace uTestAndForms.Data;
+namespace DataAccessLibrary;
 
 public interface IgetConnection
 {

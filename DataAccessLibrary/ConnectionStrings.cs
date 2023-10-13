@@ -1,6 +1,4 @@
-namespace uTestAndForms.Data;
-
-
+namespace DataAccessLibrary;
 
 public class ConnectionStrings
 {

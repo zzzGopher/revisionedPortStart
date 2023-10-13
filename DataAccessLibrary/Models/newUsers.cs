@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace uTestAndForms.Models;
+namespace DataAccessLibrary.Models;
 
 public class newUsers
 {

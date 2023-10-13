@@ -1,11 +1,12 @@
 using System.Data;
 using Microsoft.Data.SqlClient;
 
-namespace uTestAndForms.Data;
+namespace DataAccessLibrary;
 
 public class DeleteUser : IDeleteUser
 {
-    private IgetConnection _getConnection;
+    private readonly IgetConnection _getConnection;
+
     public DeleteUser(IgetConnection getConnection)
     {
         _getConnection = getConnection;
@@ -17,7 +18,7 @@ public class DeleteUser : IDeleteUser
 
         try
         {
-            using (SqlCommand cmd = new SqlCommand("DELETE FROM Users WHERE Users.Id = @Id",connection))
+            using (var cmd = new SqlCommand("DELETE FROM Users WHERE Users.Id = @Id", connection))
             {
                 cmd.Parameters.Add("@Id", SqlDbType.Int).Value = Id;
 
@@ -27,14 +28,11 @@ public class DeleteUser : IDeleteUser
 
                 connection.Close();
             }
-
-
         }
         catch (Exception e)
         {
-            Console.WriteLine(e.Message,e.Source);
+            Console.WriteLine(e.Message, e.Source);
             throw;
         }
-
     }
 }

@@ -1,4 +1,4 @@
-namespace uTestAndForms.Data;
+namespace DataAccessLibrary;
 
 public interface IDeleteUser
 {
