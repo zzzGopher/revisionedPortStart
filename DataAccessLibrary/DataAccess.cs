@@ -5,10 +5,11 @@ namespace DataAccessLibrary;
 
 public class DataAccess : IDataAccess, IGetAllUsers
 {
-    private readonly AddUser _addUser;
-    private readonly DeleteUser _deleteUser;
+    private readonly IAddUsers _addUser;
 
-    private readonly GetAllUsers _getAllUsers;
+    private readonly IDeleteUser _deleteUser;
+
+    private readonly IGetAllUsers _getAllUsers;
 
     private readonly IgetConnection _getConnection;
 
@@ -16,16 +17,18 @@ public class DataAccess : IDataAccess, IGetAllUsers
 
     private readonly List<newUsers> _newUsersList = new();
 
-    public DataAccess(IgetConnection getConnection, ILogger<DataAccess> logger)
+    public DataAccess(IgetConnection getConnection, ILogger<DataAccess> logger, IGetAllUsers getAllUsers,
+        IDeleteUser deleteUser, IAddUsers addUsers)
     {
         _getConnection = getConnection;
+
         _logger = logger;
 
-        _getAllUsers = new GetAllUsers(_newUsersList, _getConnection);
+        _getAllUsers = getAllUsers;
 
-        _deleteUser = new DeleteUser(_getConnection);
+        _deleteUser = deleteUser;
 
-        _addUser = new AddUser(_getConnection, _logger);
+        _addUser = addUsers;
     }
 
 

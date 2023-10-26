@@ -7,7 +7,7 @@ using Microsoft.IdentityModel.Tokens;
 
 namespace uTestAndForms.Pages.Blogs;
 
-public class Index : PageModel
+public class IndexForBlogs : PageModel
 {
     public IDataAccess _data;
 
@@ -16,7 +16,7 @@ public class Index : PageModel
     public IEnumerable<newUsers> newUsers;
 
 
-    public Index(IOptions<ConnectionStrings> cnStrings, IDataAccess data, ILogger<Index> Logger)
+    public IndexForBlogs(IOptions<ConnectionStrings> cnStrings, IDataAccess data, ILogger<Index> Logger)
     {
         _logger = Logger;
         _data = data;

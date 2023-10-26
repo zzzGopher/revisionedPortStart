@@ -1,4 +1,5 @@
 using DataAccessLibrary;
+using DataAccessLibrary.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,6 +14,15 @@ builder.Services.AddTransient<IgetConnection, getConnection>();
 
 builder.Services.AddTransient<IDeleteUser, DeleteUser>();
 
+builder.Services.AddTransient<IGetAllUsers, GetAllUsers>(x =>
+    new GetAllUsers(new List<newUsers>(), x.GetService<IgetConnection>()));
+
+builder.Services.AddTransient<IDeleteUser, DeleteUser>(x => new DeleteUser(x.GetService<IgetConnection>()));
+
+builder.Services.AddTransient<IAddUsers, AddUser>(x =>
+    new AddUser(x.GetService<IgetConnection>()));
+
+//connection binding
 
 builder.Services.Configure<ConnectionStrings>(builder.Configuration.GetSection(nameof(ConnectionStrings)));
 

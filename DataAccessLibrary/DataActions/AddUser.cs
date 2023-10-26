@@ -1,17 +1,15 @@
 using System.Data;
 using Microsoft.Data.SqlClient;
-using Microsoft.Extensions.Logging;
 
 namespace DataAccessLibrary;
 
 public class AddUser : IAddUsers
 {
     private readonly IgetConnection _connection;
-    private readonly ILogger<DataAccess> _logger;
 
-    public AddUser(IgetConnection connection, ILogger<DataAccess> logger)
+
+    public AddUser(IgetConnection connection)
     {
-        _logger = logger;
         _connection = connection;
     }
 
@@ -37,7 +35,6 @@ public class AddUser : IAddUsers
         }
         catch (Exception e)
         {
-            _logger.LogInformation(e.Source, e.Message);
             throw e;
         }
     }
