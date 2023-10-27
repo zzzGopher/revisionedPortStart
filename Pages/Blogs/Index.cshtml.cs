@@ -11,18 +11,18 @@ public class IndexForBlogs : PageModel
 {
     public IDataAccess _data;
 
-    public ILogger<Index> _logger;
+    public ILogger<IndexForBlogs> _logger;
 
     public IEnumerable<newUsers> newUsers;
 
 
-    public IndexForBlogs(IOptions<ConnectionStrings> cnStrings, IDataAccess data, ILogger<Index> Logger)
+    public IndexForBlogs(IOptions<ConnectionStrings> cnStrings, IDataAccess data, ILogger<IndexForBlogs> Logger)
     {
         _logger = Logger;
         _data = data;
     }
 
-    [BindProperty] public newUsers newUsersModel { get; set; }
+    [BindProperty] public newUsers newUsersModel { get; set; } = new();
 
 
     [BindProperty(SupportsGet = true)] public string nameParam { get; set; }
@@ -46,7 +46,7 @@ public class IndexForBlogs : PageModel
 
     public async Task<IActionResult> OnGetRefresh()
     {
-        _logger.LogInformation("hitted");
+        _logger.LogInformation("refreshed page");
         return Redirect("/Blogs");
     }
 

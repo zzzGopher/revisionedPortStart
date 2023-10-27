@@ -4,7 +4,7 @@ namespace DataAccessLibrary.Models;
 
 public class newUsers
 {
-    [Key] public int Id { get; set; }
+    [Key] public int? Id { get; set; } = null;
 
     [Required] public string Name { get; set; }
 

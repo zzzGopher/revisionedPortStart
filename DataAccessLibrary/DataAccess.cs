@@ -42,8 +42,8 @@ public class DataAccess : IDataAccess, IGetAllUsers
         await _addUser.Add(name, city, state);
     }
 
-    public async Task DeleteUser(int Id)
+    public async Task DeleteUser(int? Id)
     {
-        await _deleteUser.DeleteWithID(Id);
+        if (Id.HasValue) await _deleteUser.DeleteWithID(Id);
     }
 }

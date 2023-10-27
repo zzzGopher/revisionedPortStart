@@ -12,7 +12,7 @@ public class DeleteUser : IDeleteUser
         _getConnection = getConnection;
     }
 
-    public async Task DeleteWithID(int Id)
+    public async Task DeleteWithID(int? Id)
     {
         await using var connection = await _getConnection.getConnections();
 
